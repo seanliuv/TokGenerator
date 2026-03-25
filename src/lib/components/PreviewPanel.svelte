@@ -1,0 +1,44 @@
+<script lang="ts">
+	import { commentStore } from '$lib/stores/comment.svelte';
+	import TikTokCommentReply from '$lib/components/preview/TikTokCommentReply.svelte';
+	import TikTokVideoComment from '$lib/components/preview/TikTokVideoComment.svelte';
+
+	interface Props {
+		bindPreviewNode: (node: HTMLElement | null) => void;
+	}
+
+	let { bindPreviewNode }: Props = $props();
+
+	let previewRef: HTMLElement | null = $state(null);
+
+	$effect(() => {
+		bindPreviewNode(previewRef);
+	});
+</script>
+
+<div class="flex flex-1 items-center justify-center overflow-hidden bg-secondary/30 p-4 md:p-8">
+	<!-- The ref wrapper is what gets exported to PNG -->
+	<div bind:this={previewRef} class="inline-block">
+		{#if commentStore.platform === 'tiktok'}
+			{#if commentStore.subType === 'comment-reply'}
+				<TikTokCommentReply
+					username={commentStore.username}
+					avatarUrl={commentStore.avatarUrl}
+					commentText={commentStore.commentText}
+					theme={commentStore.cardTheme}
+				/>
+			{:else if commentStore.subType === 'video-comment'}
+				<TikTokVideoComment
+					username={commentStore.username}
+					avatarUrl={commentStore.avatarUrl}
+					isCelebrity={commentStore.isCelebrity}
+					time={commentStore.time}
+					likes={commentStore.likes}
+					replies={commentStore.replies}
+					commentText={commentStore.commentText}
+					theme={commentStore.cardTheme}
+				/>
+			{/if}
+		{/if}
+	</div>
+</div>

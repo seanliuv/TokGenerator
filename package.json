@@ -52,7 +52,10 @@
 		"wrangler": "^4.77.0"
 	},
 	"dependencies": {
+		"@icons-pack/svelte-simple-icons": "^6.5.0",
+		"emoji-picker-element": "^1.29.1",
 		"html-to-image": "^1.11.13",
-		"mode-watcher": "^1.1.0"
+		"mode-watcher": "^1.1.0",
+		"motion-sv": "^0.1.10"
 	}
 }
