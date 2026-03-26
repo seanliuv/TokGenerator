@@ -1,9 +1,9 @@
 <script lang="ts">
-  import PlatformSelector from '$lib/components/controls/PlatformSelector.svelte';
-  import CardThemeToggle from '$lib/components/controls/CardThemeToggle.svelte';
-  import ExportButtons from '$lib/components/controls/ExportButtons.svelte';
-  import TikTokCommentReplyControls from '$lib/components/controls/TikTokCommentReplyControls.svelte';
-  import TikTokVideoCommentControls from '$lib/components/controls/TikTokVideoCommentControls.svelte';
+  import PlatformSelector from '$lib/components/atoms/PlatformSelector.svelte';
+  import CardThemeToggle from '$lib/components/atoms/CardThemeToggle.svelte';
+  import ExportButtons from '$lib/components/atoms/ExportButtons.svelte';
+  import TikTokCommentReplyControls from '$lib/components/platforms/TikTokCommentReplyControls.svelte';
+  import TikTokVideoCommentControls from '$lib/components/platforms/TikTokVideoCommentControls.svelte';
   import { commentStore } from '$lib/stores/comment.svelte';
 
   interface Props {

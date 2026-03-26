@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { commentStore } from '$lib/stores/comment.svelte';
-	import TikTokCommentReply from '$lib/components/preview/TikTokCommentReply.svelte';
-	import TikTokVideoComment from '$lib/components/preview/TikTokVideoComment.svelte';
+	import TikTokCommentReplyPreview from '$lib/components/platforms/TikTokCommentReplyPreview.svelte';
+	import TikTokVideoCommentPreview from '$lib/components/platforms/TikTokVideoCommentPreview.svelte';
 
 	interface Props {
 		bindPreviewNode: (node: HTMLElement | null) => void;
@@ -21,14 +21,14 @@
 	<div bind:this={previewRef} class="inline-block">
 		{#if commentStore.platform === 'tiktok'}
 			{#if commentStore.subType === 'comment-reply'}
-				<TikTokCommentReply
+				<TikTokCommentReplyPreview
 					username={commentStore.username}
 					avatarUrl={commentStore.avatarUrl}
 					commentText={commentStore.commentText}
 					theme={commentStore.cardTheme}
 				/>
 			{:else if commentStore.subType === 'video-comment'}
-				<TikTokVideoComment
+				<TikTokVideoCommentPreview
 					username={commentStore.username}
 					avatarUrl={commentStore.avatarUrl}
 					isCelebrity={commentStore.isCelebrity}

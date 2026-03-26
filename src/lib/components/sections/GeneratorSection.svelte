@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ControlSidebar from '$lib/components/ControlSidebar.svelte';
-  import PreviewPanel from '$lib/components/PreviewPanel.svelte';
+  import ControlSidebar from '$lib/components/generator/ControlSidebar.svelte';
+  import PreviewPanel from '$lib/components/generator/PreviewPanel.svelte';
   import * as Card from '$lib/components/ui/card/index.js';
 
   let previewNode: HTMLElement | null = $state(null);
