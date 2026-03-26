@@ -2,7 +2,7 @@
 // Single source of truth for the entire comment generator
 
 export type Platform = 'tiktok' | 'instagram' | 'youtube' | 'twitter';
-export type SubType = 'comment-reply' | 'video-comment';
+export type SubType = 'comment-reply' | 'video-comment' | 'post-comment' | 'reels-comment' | 'shorts-comment';
 export type TimeUnit = 'mins' | 'hrs' | 'days' | 'wks';
 export type CardTheme = 'light' | 'dark';
 
@@ -12,6 +12,7 @@ export interface CommentState {
 	username: string;
 	avatarUrl: string;
 	isCelebrity: boolean;
+	isVerified: boolean;
 	commentText: string;
 	time: { value: number; unit: TimeUnit };
 	likes: number;
@@ -25,6 +26,7 @@ function createCommentStore() {
 		subType: 'comment-reply',
 		username: 'username',
 		avatarUrl: '',
+		isVerified: false,
 		isCelebrity: false,
 		commentText: 'Write any comment and see what happens 😊',
 		time: { value: 10, unit: 'hrs' },
@@ -39,6 +41,7 @@ function createCommentStore() {
 		get username() { return state.username; },
 		get avatarUrl() { return state.avatarUrl; },
 		get isCelebrity() { return state.isCelebrity; },
+		get isVerified() { return state.isVerified; },
 		get commentText() { return state.commentText; },
 		get time() { return state.time; },
 		get likes() { return state.likes; },
@@ -50,6 +53,7 @@ function createCommentStore() {
 		setUsername(u: string) { state.username = u; },
 		setAvatarUrl(url: string) { state.avatarUrl = url; },
 		setIsCelebrity(v: boolean) { state.isCelebrity = v; },
+		setIsVerified(v: boolean) { state.isVerified = v; },
 		setCommentText(t: string) { state.commentText = t; },
 		setTimeValue(v: number) { state.time.value = v; },
 		setTimeUnit(u: TimeUnit) { state.time.unit = u; },

@@ -1,104 +1,116 @@
 <script lang="ts">
-	import { commentStore } from '$lib/stores/comment.svelte';
-	import { Smile } from '@lucide/svelte';
-	import { onMount } from 'svelte';
+  import { commentStore } from '$lib/stores/comment.svelte';
+  import { Textarea } from '$lib/components/ui/textarea/index.js';
+  import { tick } from 'svelte';
+  import { SmilePlus } from '@lucide/svelte';
 
-	const MAX_CHARS = 500;
-	const charCount = $derived(commentStore.commentText.length);
+  let pickerContainer: HTMLElement | null = $state(null);
+  let showPicker = $state(false);
+  let pickerLoaded = $state(false);
+  let textareaRef: HTMLTextAreaElement | null = $state(null);
 
-	let isPickerOpen = $state(false);
-	let pickerContainer: HTMLElement;
-	let textareaRef: HTMLTextAreaElement;
+  async function togglePicker() {
+    showPicker = !showPicker;
+    if (showPicker && !pickerLoaded) {
+      const EmojiModule = await import('emoji-picker-element');
+      // @ts-expect-error - dynamic import is untyped
+      const Picker = EmojiModule.default || EmojiModule.Picker || EmojiModule;
+      const picker = new Picker({
+        locale: 'en',
+        skinToneEmoji: '👍',
+      });
 
-	onMount(() => {
-		// Dynamically import web component to avoid SSR issues
-		import('emoji-picker-element');
+      picker.addEventListener('emoji-click', (event: Event) => {
+        const customEvent = event as CustomEvent;
+        const emoji = customEvent.detail?.unicode;
+        if (!emoji || !textareaRef) return;
 
-		// Handle click outside to close picker
-		const handleClickOutside = (e: MouseEvent) => {
-			if (isPickerOpen && pickerContainer && !pickerContainer.contains(e.target as Node)) {
-				isPickerOpen = false;
-			}
-		};
-		window.addEventListener('click', handleClickOutside);
-		return () => window.removeEventListener('click', handleClickOutside);
-	});
+        const start = textareaRef.selectionStart;
+        const end = textareaRef.selectionEnd;
+        const current = commentStore.commentText;
 
-	function handleEmojiClick(e: Event) {
-		const detail = (e as CustomEvent).detail;
-		if (!detail || !detail.unicode) return;
+        const newText = current.substring(0, start) + emoji + current.substring(end);
+        commentStore.setCommentText(newText);
 
-		const emoji = detail.unicode;
-		const currentText = commentStore.commentText;
-		const start = textareaRef.selectionStart;
-		const end = textareaRef.selectionEnd;
+        tick().then(() => {
+          textareaRef!.selectionStart = textareaRef!.selectionEnd = start + emoji.length;
+          textareaRef!.focus();
+        });
+        showPicker = false;
+      });
 
-		// Insert at cursor
-		const newText = currentText.substring(0, start) + emoji + currentText.substring(end);
+      if (pickerContainer) {
+        // eslint-disable-next-line svelte/no-dom-manipulating
+        pickerContainer.appendChild(picker);
+      }
+      pickerLoaded = true;
+    }
+  }
 
-		if (newText.length <= MAX_CHARS) {
-			commentStore.setCommentText(newText);
-			// Restore focus and cursor position after Svelte updates DOM
-			setTimeout(() => {
-				textareaRef.focus();
-				textareaRef.setSelectionRange(start + emoji.length, start + emoji.length);
-			}, 0);
-		}
-	}
+  function closePicker(e: MouseEvent) {
+    if (showPicker && pickerContainer && !pickerContainer.contains(e.target as Node)) {
+      showPicker = false;
+    }
+  }
 </script>
 
-<div class="relative flex flex-col gap-1" bind:this={pickerContainer}>
-	<div class="relative rounded-lg border border-border bg-secondary/50 transition-all focus-within:ring-1 focus-within:ring-ring">
-		<textarea
-			bind:this={textareaRef}
-			value={commentStore.commentText}
-			oninput={(e) => commentStore.setCommentText((e.target as HTMLTextAreaElement).value)}
-			placeholder="Write any comment and see what happens 😊"
-			maxlength={MAX_CHARS}
-			rows={4}
-			class="w-full resize-none border-none bg-transparent px-3 pt-3 pb-8 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-transparent focus:outline-none focus:ring-0 focus-visible:border-transparent focus-visible:outline-none focus-visible:ring-0"
-		></textarea>
+<svelte:window onclick={closePicker} />
 
-		<!-- Emoji trigger button -->
-		<button
-			type="button"
-			class="absolute left-2.5 bottom-2 cursor-pointer text-muted-foreground transition-colors hover:text-foreground"
-			onclick={() => (isPickerOpen = !isPickerOpen)}
-			title="Add Emoji"
-		>
-			<Smile size={18} />
-		</button>
+<div class="flex flex-col gap-2">
+  <span class="text-[11px] font-semibold tracking-widest text-muted-foreground">COMMENT TEXT</span>
 
-		<!-- Character count -->
-		<span class="absolute right-3 bottom-2.5 text-[11px] text-muted-foreground">
-			{charCount} / {MAX_CHARS}
-		</span>
-	</div>
+  <div class="relative rounded-lg border border-border bg-secondary/50 focus-within:ring-1 focus-within:ring-ring">
+    <Textarea
+      bind:ref={textareaRef}
+      value={commentStore.commentText}
+      oninput={(e) => commentStore.setCommentText((e.target as HTMLTextAreaElement).value)}
+      placeholder="Leave a comment..."
+      class="min-h-[80px] w-full resize-none border-none bg-transparent px-3 py-2 pb-8 shadow-none focus-visible:ring-0 placeholder:text-muted-foreground"
+    />
 
-	<!-- Emoji Picker Dropdown -->
-	{#if isPickerOpen}
-		<div class="absolute left-0 top-full z-50 mt-1 w-full overflow-hidden rounded-xl border border-border shadow-xl">
-			<!-- @ts-ignore: Custom web component -->
-			<emoji-picker onemoji-click={handleEmojiClick} class="light"></emoji-picker>
-		</div>
-	{/if}
+    <!-- Controls at bottom of textarea -->
+    <div class="absolute bottom-2 left-2 flex items-center gap-2">
+      <div class="relative">
+        <button
+          onclick={(e) => {
+            e.stopPropagation();
+            togglePicker();
+          }}
+          class="flex h-5 w-5 cursor-pointer items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          title="Insert Emoji"
+        >
+          <SmilePlus size={14} />
+        </button>
+        <!-- emoji-picker-element injected into this dedicated sibling container to avoid Svelte node tracking confusion -->
+        <div
+          bind:this={pickerContainer}
+          class="absolute top-full mt-2 left-0 z-50 shadow-2xl rounded-xl border border-border overflow-hidden bg-background transition-all {showPicker
+            ? 'opacity-100 scale-100'
+            : 'opacity-0 scale-95 pointer-events-none'}"
+          class:hidden={!showPicker}
+        ></div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-2 right-2 text-[10px] text-muted-foreground">
+      {commentStore.commentText.length}/150
+    </div>
+  </div>
 </div>
 
 <style>
-	/* Use standard shadcn CSS vars to adapt picker to current theme automatically */
-	emoji-picker {
-		width: 100%;
-		height: 320px;
-		--num-columns: 7; /* Adjusted columns so they fit within the sidebar's narrower width without scrolling */
-		--background: hsl(var(--background));
-		--border-color: hsl(var(--border));
-		--text: hsl(var(--foreground));
-		--indicator-color: hsl(var(--primary));
-		--input-border-color: hsl(var(--border));
-		--input-font-color: hsl(var(--foreground));
-		--search-icon-color: hsl(var(--muted-foreground));
-		--category-emoji-padding: 0.5rem;
-		--button-hover-background: hsl(var(--secondary));
-		--button-active-background: hsl(var(--secondary));
-	}
+  :global(emoji-picker) {
+    --background: var(--color-background);
+    --border-color: var(--color-border);
+    --category-font-color: var(--color-muted-foreground);
+    --indicator-color: var(--gen-accent);
+    --button-hover-background: var(--color-secondary);
+
+    /* Responsive sizing */
+    width: min(calc(100vw - 2rem), 352px);
+    height: min(400px, 50vh);
+
+    /* Reset built-in border and shadow to let container handle them */
+    border: none;
+  }
 </style>

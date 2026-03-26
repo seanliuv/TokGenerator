@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Download, Copy, Check } from '@lucide/svelte';
   import { exportAsPng, copyToClipboard } from '$lib/utils/export';
+  import { Button } from '$lib/components/ui/button';
 
   interface Props {
     getPreviewNode: () => HTMLElement | null;
@@ -42,19 +43,20 @@
 </script>
 
 <div class="flex gap-2">
-  <button
+  <Button
     onclick={handleExport}
     disabled={exportLoading}
-    class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border-none py-2.5 text-sm font-semibold text-white transition-all disabled:cursor-wait disabled:opacity-60"
+    class="flex flex-1 items-center justify-center gap-2 py-5 font-semibold text-white transition-all"
     style="background: var(--gen-accent);"
   >
     <Download size={15} />
     {exportLoading ? 'Exporting...' : 'Export Image'}
-  </button>
-  <button
+  </Button>
+  <Button
+    variant="secondary"
     onclick={handleCopy}
     disabled={copyLoading}
-    class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border border-border bg-secondary py-2.5 text-sm font-semibold text-foreground transition-all disabled:cursor-wait disabled:opacity-60 hover:bg-accent"
+    class="flex flex-1 items-center justify-center gap-2 border border-border bg-secondary/80 py-5 font-semibold transition-all hover:bg-accent"
   >
     {#if copySuccess}
       <Check size={15} class="text-green-500" />
@@ -63,5 +65,5 @@
       <Copy size={15} />
       {copyLoading ? 'Copying...' : 'Copy'}
     {/if}
-  </button>
+  </Button>
 </div>

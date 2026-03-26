@@ -13,7 +13,7 @@
   let { getPreviewNode }: Props = $props();
 </script>
 
-<aside class="flex h-full w-full flex-col overflow-hidden border-r border-border bg-background md:w-80 md:shrink-0">
+<aside class="flex h-full w-full flex-col overflow-hidden border-r border-border bg-background md:w-100 md:shrink-0">
   <!-- Scrollable controls area -->
   <div class="flex flex-1 flex-col gap-5 overflow-y-auto p-4">
     <PlatformSelector />
