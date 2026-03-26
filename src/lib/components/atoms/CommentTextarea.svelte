@@ -57,8 +57,6 @@
 <svelte:window onclick={closePicker} />
 
 <div class="flex flex-col gap-2">
-  <span class="text-[11px] font-semibold tracking-widest text-muted-foreground">COMMENT TEXT</span>
-
   <div class="relative rounded-lg border border-border bg-secondary/50 focus-within:ring-1 focus-within:ring-ring">
     <Textarea
       bind:ref={textareaRef}

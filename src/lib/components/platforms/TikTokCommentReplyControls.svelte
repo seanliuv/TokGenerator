@@ -1,9 +1,10 @@
 <script lang="ts">
-	import AvatarInput from '../atoms/AvatarInput.svelte';
-	import CommentTextarea from '../atoms/CommentTextarea.svelte';
+  import AvatarInput from '../atoms/AvatarInput.svelte';
+  import CommentTextarea from '../atoms/CommentTextarea.svelte';
 </script>
 
 <div class="flex flex-col gap-5">
-	<AvatarInput />
-	<CommentTextarea />
+  <span class="text-[11px] font-semibold tracking-widest text-muted-foreground">COMMENT CONTROLS</span>
+  <AvatarInput />
+  <CommentTextarea />
 </div>

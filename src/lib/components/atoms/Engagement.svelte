@@ -31,8 +31,6 @@
 </script>
 
 <div class="mb-1 flex flex-col gap-1.5">
-  <span class="text-[10px] font-bold tracking-[0.15em] text-muted-foreground/70 uppercase px-0.5"> Engagement Metrics </span>
-
   <div class="flex w-full items-center gap-2">
     <!-- Time Control (Weight: 3) -->
     <div class="{pillClass} flex-3 rounded-xl">
