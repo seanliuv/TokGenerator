@@ -62,7 +62,7 @@
     }}
     class="w-full"
   >
-    <Tabs.List class="flex w-full h-auto gap-1 rounded-xl border border-border bg-secondary/50 p-1.5">
+    <Tabs.List class="flex w-full h-auto gap-1 rounded-xl border border-border bg-secondary/50">
       {#each platforms as platform (platform.id)}
         {@const Icon = platform.icon}
         <Tabs.Trigger
