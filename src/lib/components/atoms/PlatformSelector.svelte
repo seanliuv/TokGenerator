@@ -1,48 +1,7 @@
 <script lang="ts">
-  import { commentStore } from '$lib/stores/comment.svelte';
+  import { platforms, commentStore } from '$lib/stores/comment.svelte';
   import type { Platform, SubType } from '$lib/stores/comment.svelte';
-  import { SiTiktok, SiInstagram, SiYoutube, SiX } from '@icons-pack/svelte-simple-icons';
   import * as Tabs from '$lib/components/ui/tabs';
-
-  const platforms = [
-    {
-      id: 'tiktok',
-      label: 'TikTok',
-      icon: SiTiktok,
-      enabled: true,
-      subTypes: [
-        { id: 'comment-reply', label: 'Comment Reply' },
-        { id: 'video-comment', label: 'Video Comment' },
-      ],
-    },
-    {
-      id: 'instagram',
-      label: 'Instagram',
-      icon: SiInstagram,
-      enabled: false,
-      subTypes: [
-        { id: 'post-comment', label: 'Post Comment' },
-        { id: 'reels-comment', label: 'Reels Comment' },
-      ],
-    },
-    {
-      id: 'youtube',
-      label: 'YouTube',
-      icon: SiYoutube,
-      enabled: false,
-      subTypes: [
-        { id: 'video-comment', label: 'Video Comment' },
-        { id: 'shorts-comment', label: 'Shorts Comment' },
-      ],
-    },
-    {
-      id: 'twitter',
-      label: 'X',
-      icon: SiX,
-      enabled: false,
-      subTypes: [{ id: 'post-comment', label: 'Post Comment' }],
-    },
-  ];
 
   let activePlatform = $derived(platforms.find((p) => p.id === commentStore.platform));
 </script>
@@ -63,15 +22,11 @@
     class="w-full"
   >
     <Tabs.List class="flex w-full h-auto gap-1 rounded-xl border border-border bg-secondary/50">
-      {#each platforms as platform (platform.id)}
+      {#each platforms.filter((p) => p.enabled) as platform (platform.id)}
         {@const Icon = platform.icon}
         <Tabs.Trigger
           value={platform.id}
-          disabled={!platform.enabled}
-          title={platform.enabled ? platform.label : `${platform.label} (Coming soon)`}
-          class="flex h-auto flex-1 flex-col items-center justify-center gap-1 rounded-lg px-0 py-2 transition-all data-[state=active]:bg-background data-[state=active]:shadow-sm data-[state=active]:text-foreground {!platform.enabled
-            ? 'opacity-40 disabled:opacity-40 hover:bg-transparent data-[state=inactive]:bg-transparent'
-            : 'data-[state=inactive]:text-muted-foreground'}"
+          class="flex h-auto flex-1 flex-col items-center justify-center gap-1 rounded-lg px-0 py-2 transition-all data-[state=active]:bg-background data-[state=active]:shadow-sm data-[state=active]:text-foreground data-[state=inactive]:text-muted-foreground"
         >
           <Icon size={20} />
         </Tabs.Trigger>

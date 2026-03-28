@@ -1,10 +1,51 @@
 // Central reactive state using Svelte 5 $state rune
 // Single source of truth for the entire comment generator
+import { SiTiktok, SiInstagram, SiYoutube, SiX } from '@icons-pack/svelte-simple-icons';
 
 export type Platform = 'tiktok' | 'instagram' | 'youtube' | 'twitter';
 export type SubType = 'comment-reply' | 'video-comment' | 'post-comment' | 'reels-comment' | 'shorts-comment';
 export type TimeUnit = 'mins' | 'hrs' | 'days' | 'wks';
 export type CardTheme = 'light' | 'dark';
+
+export const platforms = [
+{
+	id: 'tiktok',
+	label: 'TikTok',
+	icon: SiTiktok,
+	enabled: true,
+	subTypes: [
+	{ id: 'comment-reply', label: 'Comment Reply' },
+	{ id: 'video-comment', label: 'Video Comment' },
+	],
+},
+{
+	id: 'instagram',
+	label: 'Instagram',
+	icon: SiInstagram,
+	enabled: false,
+	subTypes: [
+	{ id: 'post-comment', label: 'Post Comment' },
+	{ id: 'reels-comment', label: 'Reels Comment' },
+	],
+},
+{
+	id: 'youtube',
+	label: 'YouTube',
+	icon: SiYoutube,
+	enabled: false,
+	subTypes: [
+	{ id: 'video-comment', label: 'Video Comment' },
+	{ id: 'shorts-comment', label: 'Shorts Comment' },
+	],
+},
+{
+	id: 'twitter',
+	label: 'X',
+	icon: SiX,
+	enabled: false,
+	subTypes: [{ id: 'post-comment', label: 'Post Comment' }],
+},
+];
 
 export interface CommentState {
 	platform: Platform;
