@@ -57,8 +57,7 @@ async function handleCelebrity(): Promise<{ username: string; avatarUrl: string 
 	if (!imageUrl) {
 		throw new Error(`No image available for: ${celebrity.name}`);
 	}
-	const { dataUrl } = await fetchImageAsDataUrl(imageUrl);
-	return { username: celebrity.name, avatarUrl: dataUrl };
+	return { username: celebrity.name, avatarUrl: imageUrl };
 }
 
 export const GET: RequestHandler = async ({ url }) => {
