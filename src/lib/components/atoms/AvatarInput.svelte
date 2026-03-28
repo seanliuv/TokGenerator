@@ -15,7 +15,7 @@
     isLoading = true;
     try {
       if (mode === 'celebrity') {
-        const result = getRandomCelebrityAvatar();
+        const result = await getRandomCelebrityAvatar();
         commentStore.setAvatar(result.username, result.avatarUrl, true);
       } else {
         const result = await fetchRandomUser(mode);

@@ -40,13 +40,16 @@ export async function fetchRandomUser(gender: 'male' | 'female'): Promise<Avatar
 }
 
 /**
- * Get a random celebrity from the local dataset
+ * Get a random celebrity avatar via the server-side Wikipedia proxy.
+ * The proxy fetches a 400px thumbnail from Wikipedia — CORS-safe in both
+ * the browser and html-to-image PNG export.
  */
-export function getRandomCelebrityAvatar(): AvatarResult {
+export async function getRandomCelebrityAvatar(): Promise<AvatarResult> {
 	const celebrity = getRandomCelebrity();
+	const avatarUrl = `/api/avatar?name=${encodeURIComponent(celebrity.name)}`;
 	return {
 		username: celebrity.name,
-		avatarUrl: celebrity.avatarUrl,
+		avatarUrl,
 		isCelebrity: true
 	};
 }
