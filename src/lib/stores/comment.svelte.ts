@@ -61,10 +61,11 @@ function createCommentStore() {
 		setReplies(n: number) { state.replies = n; },
 		setCardTheme(t: CardTheme) { state.cardTheme = t; },
 
-		setAvatar(username: string, avatarUrl: string, isCelebrity = false) {
+		setAvatar(username: string, avatarUrl: string, isCelebrity = false, isVerified = false) {
 			state.username = username;
 			state.avatarUrl = avatarUrl;
 			state.isCelebrity = isCelebrity;
+			state.isVerified = isVerified;
 		}
 	};
 }

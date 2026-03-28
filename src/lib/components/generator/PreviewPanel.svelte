@@ -24,6 +24,7 @@
 				<TikTokCommentReplyPreview
 					username={commentStore.username}
 					avatarUrl={commentStore.avatarUrl}
+					isCelebrity={commentStore.isCelebrity}
 					commentText={commentStore.commentText}
 					theme={commentStore.cardTheme}
 				/>

@@ -14,7 +14,7 @@
 <section id="generator" class="mx-auto flex w-full max-w-7xl h-[calc(100dvh-56px)] items-center justify-center p-4 md:p-6 lg:p-8">
   <Card.Root class="flex h-full w-full flex-col overflow-hidden border-border bg-card shadow-lg md:flex-row">
     <!-- On mobile: preview on top (dynamic height), controls below -->
-    <div class="order-1 flex h-[20dvh] min-h-[150px] shrink-0 items-center justify-center border-b border-border bg-secondary/10 md:hidden">
+    <div class="order-1 flex h-[20dvh] min-h-37.5 shrink-0 items-center justify-center border-b border-border bg-secondary/10 md:hidden">
       <!-- Mini preview panel for mobile -->
       <PreviewPanel bindPreviewNode={(n) => (previewNode = n)} />
     </div>
