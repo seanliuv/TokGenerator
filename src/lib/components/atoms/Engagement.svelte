@@ -55,7 +55,7 @@
         >
           {commentStore.time.unit}
         </Select.Trigger>
-        <Select.Content class="min-w-[80px]">
+        <Select.Content class="min-w-20">
           {#each units as unit (unit.value)}
             <Select.Item value={unit.value} class="text-xs">{unit.label}</Select.Item>
           {/each}

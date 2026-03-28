@@ -28,7 +28,7 @@ function createCommentStore() {
 		avatarUrl: '',
 		isVerified: false,
 		isCelebrity: false,
-		commentText: 'Write any comment and see what happens 😊',
+		commentText: 'Write your custom comment here 😊',
 		time: { value: 10, unit: 'hrs' },
 		likes: 72,
 		replies: 2,

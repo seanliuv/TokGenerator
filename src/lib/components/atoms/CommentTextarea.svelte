@@ -63,7 +63,7 @@
       value={commentStore.commentText}
       oninput={(e) => commentStore.setCommentText((e.target as HTMLTextAreaElement).value)}
       placeholder="Leave a comment..."
-      class="min-h-[80px] w-full resize-none border-none bg-transparent px-3 py-2 pb-8 shadow-none focus-visible:ring-0 placeholder:text-muted-foreground"
+      class="min-h-20 w-full resize-none border-none bg-transparent px-3 py-2 pb-8 shadow-none focus-visible:ring-0 placeholder:text-muted-foreground"
     />
 
     <!-- Controls at bottom of textarea -->
