@@ -6,7 +6,7 @@
   import * as Avatar from '$lib/components/ui/avatar';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
   import { commentStore } from '$lib/stores/comment.svelte';
-  import { fetchRandomUser, getRandomCelebrityAvatar, fileToDataUrl } from '$lib/utils/avatar';
+  import { fetchAvatarByMode, fileToDataUrl } from '$lib/utils/avatar';
 
   let fileInput: HTMLInputElement;
   let isLoading = $state(false);
@@ -14,13 +14,8 @@
   async function handleAvatarSelect(mode: 'male' | 'female' | 'celebrity') {
     isLoading = true;
     try {
-      if (mode === 'celebrity') {
-        const result = await getRandomCelebrityAvatar();
-        commentStore.setAvatar(result.username, result.avatarUrl, true);
-      } else {
-        const result = await fetchRandomUser(mode);
-        commentStore.setAvatar(result.username, result.avatarUrl, false);
-      }
+      const result = await fetchAvatarByMode(mode);
+      commentStore.setAvatar(result.username, result.avatarUrl, result.isCelebrity);
     } catch (e) {
       console.error('Failed to load avatar:', e);
     } finally {
