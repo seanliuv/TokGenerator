@@ -36,8 +36,8 @@ Single Svelte 5 `$state` rune object wrapped in a factory function. Exported as 
 
 - `platform`: `'tiktok' | 'instagram' | 'youtube' | 'twitter'` (only TikTok is active)
 - `subType`: `'comment-reply' | 'video-comment'` (+ future Instagram/YouTube/Shorts variants)
-- `avatarMode`: drives which fetch strategy AvatarInput uses (`male | female | celebrity | custom`)
-- `isVerified` / `isCelebrity`: distinct — `isVerified` shows a badge generically, `isCelebrity` implies celebrity data source
+- `avatarMode`: drives which fetch strategy AvatarInput uses (`male | female | custom`)
+- `isVerified`: shows a badge generically
 
 The store exposes typed setters instead of direct mutation. **Never mutate store properties directly from components.**
 
@@ -76,12 +76,11 @@ src/lib/components/
 
 `html-to-image` is called **twice** — first pass warms up SVG foreignObject font/image cache, second pass captures. Output is 2× pixel ratio (Retina). Both `exportAsPng` and `copyToClipboard` follow this double-render pattern.
 
-### Avatar Modes (`src/lib/utils/avatar.ts`)
+### Avatar Modes (`src/lib/components/atoms/AvatarInput.svelte`)
 
 | Mode | Name source | Avatar source |
 |---|---|---|
 | male / female | randomuser.me API | randomuser.me photo URL |
-| celebrity | `src/lib/data/celebrities.ts` (hardcoded ~20) | Wikipedia Commons URL |
 | custom | user types | local File → data URL |
 
 ---

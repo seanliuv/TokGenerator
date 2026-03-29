@@ -6,16 +6,45 @@
   import * as Avatar from '$lib/components/ui/avatar';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
   import { commentStore } from '$lib/stores/comment.svelte';
-  import { fetchAvatarByMode, fileToDataUrl } from '$lib/utils/avatar';
 
   let fileInput: HTMLInputElement;
   let isLoading = $state(false);
 
-  async function handleAvatarSelect(mode: 'male' | 'female' | 'celebrity') {
+  /**
+   * Fetch avatar data from the server-side unified endpoint.
+   * The server calls randomuser.me and returns image data as a
+   * base64 data URL — CORS-safe in both the browser and html-to-image PNG export.
+   */
+  async function fetchAvatarByMode(mode: 'male' | 'female'): Promise<{ username: string; avatarUrl: string }> {
+    const response = await fetch(`/api/avatar?mode=${mode}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch avatar: ${response.statusText}`);
+    }
+
+    const data = (await response.json()) as { username: string; avatarUrl: string };
+    return {
+      username: data.username,
+      avatarUrl: data.avatarUrl,
+    };
+  }
+
+  /**
+   * Convert a File object to a data URL for local preview
+   */
+  function fileToDataUrl(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => resolve(e.target?.result as string);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async function handleAvatarSelect(mode: 'male' | 'female') {
     isLoading = true;
     try {
       const result = await fetchAvatarByMode(mode);
-      commentStore.setAvatar(result.username, result.avatarUrl, result.isCelebrity);
+      commentStore.setAvatar(result.username, result.avatarUrl);
     } catch (e) {
       console.error('Failed to load avatar:', e);
     } finally {
@@ -28,7 +57,6 @@
     if (!file) return;
     const dataUrl = await fileToDataUrl(file);
     commentStore.setAvatarUrl(dataUrl);
-    commentStore.setIsCelebrity(false);
   }
 </script>
 
@@ -94,11 +122,6 @@
           <User size={14} class="mr-2" />
           Female
         </DropdownMenu.Item>
-        <DropdownMenu.Separator />
-        <DropdownMenu.Item onclick={() => handleAvatarSelect('celebrity')} class="font-medium" style="color: var(--gen-accent);">
-          <Users size={14} class="mr-2" />
-          Celebrity
-        </DropdownMenu.Item>
       </DropdownMenu.Content>
     </DropdownMenu.Root>
 
@@ -107,7 +130,7 @@
       aria-label="Verified Toggle"
       title="Verified"
       pressed={commentStore.isVerified}
-      onchange={() => commentStore.setIsVerified(!commentStore.isVerified)}
+      onPressedChange={(v) => commentStore.setIsVerified(v)}
       class="h-8 w-8 data-[state=on]:bg-transparent data-[state=on]:text-blue-500 hover:bg-muted"
     >
       <BadgeCheck size={14} />

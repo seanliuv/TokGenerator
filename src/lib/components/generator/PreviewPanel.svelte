@@ -1,45 +1,45 @@
 <script lang="ts">
-	import { commentStore } from '$lib/stores/comment.svelte';
-	import TikTokCommentReplyPreview from '$lib/components/platforms/TikTokCommentReplyPreview.svelte';
-	import TikTokVideoCommentPreview from '$lib/components/platforms/TikTokVideoCommentPreview.svelte';
+  import { commentStore } from '$lib/stores/comment.svelte';
+  import TikTokCommentReplyPreview from '$lib/components/platforms/TikTokCommentReplyPreview.svelte';
+  import TikTokVideoCommentPreview from '$lib/components/platforms/TikTokVideoCommentPreview.svelte';
 
-	interface Props {
-		bindPreviewNode: (node: HTMLElement | null) => void;
-	}
+  interface Props {
+    bindPreviewNode: (node: HTMLElement | null) => void;
+  }
 
-	let { bindPreviewNode }: Props = $props();
+  let { bindPreviewNode }: Props = $props();
 
-	let previewRef: HTMLElement | null = $state(null);
+  let previewRef: HTMLElement | null = $state(null);
 
-	$effect(() => {
-		bindPreviewNode(previewRef);
-	});
+  $effect(() => {
+    bindPreviewNode(previewRef);
+  });
 </script>
 
 <div class="flex flex-1 items-center justify-center overflow-hidden bg-secondary/30 p-4 md:p-8">
-	<!-- The ref wrapper is what gets exported to PNG -->
-	<div bind:this={previewRef} class="inline-block">
-		{#if commentStore.platform === 'tiktok'}
-			{#if commentStore.subType === 'comment-reply'}
-				<TikTokCommentReplyPreview
-					username={commentStore.username}
-					avatarUrl={commentStore.avatarUrl}
-					isCelebrity={commentStore.isCelebrity}
-					commentText={commentStore.commentText}
-					theme={commentStore.cardTheme}
-				/>
-			{:else if commentStore.subType === 'video-comment'}
-				<TikTokVideoCommentPreview
-					username={commentStore.username}
-					avatarUrl={commentStore.avatarUrl}
-					isCelebrity={commentStore.isCelebrity}
-					time={commentStore.time}
-					likes={commentStore.likes}
-					replies={commentStore.replies}
-					commentText={commentStore.commentText}
-					theme={commentStore.cardTheme}
-				/>
-			{/if}
-		{/if}
-	</div>
+  <!-- The ref wrapper is what gets exported to PNG -->
+  <div bind:this={previewRef} class="inline-block">
+    {#if commentStore.platform === 'tiktok'}
+      {#if commentStore.subType === 'comment-reply'}
+        <TikTokCommentReplyPreview
+          username={commentStore.username}
+          avatarUrl={commentStore.avatarUrl}
+          isVerified={commentStore.isVerified}
+          commentText={commentStore.commentText}
+          theme={commentStore.cardTheme}
+        />
+      {:else if commentStore.subType === 'video-comment'}
+        <TikTokVideoCommentPreview
+          username={commentStore.username}
+          avatarUrl={commentStore.avatarUrl}
+          isVerified={commentStore.isVerified}
+          time={commentStore.time}
+          likes={commentStore.likes}
+          replies={commentStore.replies}
+          commentText={commentStore.commentText}
+          theme={commentStore.cardTheme}
+        />
+      {/if}
+    {/if}
+  </div>
 </div>

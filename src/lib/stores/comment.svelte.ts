@@ -52,7 +52,6 @@ export interface CommentState {
 	subType: SubType;
 	username: string;
 	avatarUrl: string;
-	isCelebrity: boolean;
 	isVerified: boolean;
 	commentText: string;
 	time: { value: number; unit: TimeUnit };
@@ -68,7 +67,6 @@ function createCommentStore() {
 		username: 'username',
 		avatarUrl: '',
 		isVerified: false,
-		isCelebrity: false,
 		commentText: 'Write your custom comment here 😊',
 		time: { value: 10, unit: 'hrs' },
 		likes: 72,
@@ -81,7 +79,6 @@ function createCommentStore() {
 		get subType() { return state.subType; },
 		get username() { return state.username; },
 		get avatarUrl() { return state.avatarUrl; },
-		get isCelebrity() { return state.isCelebrity; },
 		get isVerified() { return state.isVerified; },
 		get commentText() { return state.commentText; },
 		get time() { return state.time; },
@@ -93,7 +90,6 @@ function createCommentStore() {
 		setSubType(s: SubType) { state.subType = s; },
 		setUsername(u: string) { state.username = u; },
 		setAvatarUrl(url: string) { state.avatarUrl = url; },
-		setIsCelebrity(v: boolean) { state.isCelebrity = v; },
 		setIsVerified(v: boolean) { state.isVerified = v; },
 		setCommentText(t: string) { state.commentText = t; },
 		setTimeValue(v: number) { state.time.value = v; },
@@ -102,11 +98,9 @@ function createCommentStore() {
 		setReplies(n: number) { state.replies = n; },
 		setCardTheme(t: CardTheme) { state.cardTheme = t; },
 
-		setAvatar(username: string, avatarUrl: string, isCelebrity = false, isVerified = false) {
+		setAvatar(username: string, avatarUrl: string) {
 			state.username = username;
 			state.avatarUrl = avatarUrl;
-			state.isCelebrity = isCelebrity;
-			state.isVerified = isVerified;
 		}
 	};
 }
