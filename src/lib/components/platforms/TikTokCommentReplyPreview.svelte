@@ -26,7 +26,7 @@
 	Outer wrapper: pb-[2.5em] reserves space below bubble so the tail is visible.
 	--bubble-bg drives the tail color via CSS variable.
 -->
-<div class="w-85 select-none font-sans pb-[2.5em]" style="--bubble-bg: {cardBg};">
+<div class="w-110 select-none font-sans pb-[2.5em]" style="--bubble-bg: {cardBg};">
   <!--
 		Bubble: rounded-bl-none keeps the bottom-left corner sharp so the tail
 		merges seamlessly. No overflow:hidden so the tail can peek out below.
