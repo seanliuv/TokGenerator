@@ -2,12 +2,19 @@
   import { Download, Copy, Check } from '@lucide/svelte';
   import { exportAsPng, copyToClipboard } from '$lib/utils/export';
   import { Button } from '$lib/components/ui/button';
+  import { commentStore } from '$lib/stores/comment.svelte';
 
   interface Props {
     getPreviewNode: () => HTMLElement | null;
   }
 
   let { getPreviewNode }: Props = $props();
+
+  function buildFilename(): string {
+    const date = new Date().toISOString().slice(0, 10);
+    const username = commentStore.username.replace(/\s+/g, '_');
+    return `${commentStore.platform}-${commentStore.subType}-${username}-${date}.png`;
+  }
 
   let exportLoading = $state(false);
   let copyLoading = $state(false);
@@ -18,7 +25,7 @@
     if (!node) return;
     exportLoading = true;
     try {
-      await exportAsPng(node, 'comment.png');
+      await exportAsPng(node, buildFilename());
     } catch (e) {
       console.error('Export failed:', e);
     } finally {
