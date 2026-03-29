@@ -3,7 +3,7 @@
 import { SiTiktok, SiInstagram, SiYoutube, SiX } from '@icons-pack/svelte-simple-icons';
 
 export type Platform = 'tiktok' | 'instagram' | 'youtube' | 'twitter';
-export type SubType = 'comment-reply' | 'video-comment' | 'post-comment' | 'reels-comment' | 'shorts-comment';
+export type SubType = 'bubble-comment-reply' | 'video-comment' | 'post-comment' | 'reels-comment' | 'shorts-comment';
 export type TimeUnit = 'mins' | 'hrs' | 'days' | 'wks';
 export type CardTheme = 'light' | 'dark';
 
@@ -14,7 +14,7 @@ export const platforms = [
 	icon: SiTiktok,
 	enabled: true,
 	subTypes: [
-	{ id: 'comment-reply', label: 'Comment Reply' },
+	{ id: 'bubble-comment-reply', label: 'Bubble Comment Reply' },
 	{ id: 'video-comment', label: 'Video Comment' },
 	],
 },
@@ -63,7 +63,7 @@ export interface CommentState {
 function createCommentStore() {
 	const state = $state<CommentState>({
 		platform: 'tiktok',
-		subType: 'comment-reply',
+		subType: 'bubble-comment-reply',
 		username: 'username',
 		avatarUrl: '',
 		isVerified: false,

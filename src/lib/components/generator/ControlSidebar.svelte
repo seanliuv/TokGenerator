@@ -20,7 +20,7 @@
     <CardThemeToggle />
 
     {#if commentStore.platform === 'tiktok'}
-      {#if commentStore.subType === 'comment-reply'}
+      {#if commentStore.subType === 'bubble-comment-reply'}
         <TikTokCommentReplyControls />
       {:else if commentStore.subType === 'video-comment'}
         <TikTokVideoCommentControls />
