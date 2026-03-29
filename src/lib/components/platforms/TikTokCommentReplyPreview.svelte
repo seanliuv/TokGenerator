@@ -31,7 +31,7 @@
 		Bubble: rounded-bl-none keeps the bottom-left corner sharp so the tail
 		merges seamlessly. No overflow:hidden so the tail can peek out below.
 	-->
-  <div class="bubble relative rounded-[10px] rounded-bl-none px-4.5 pt-4.5 pb-5.5" style="background: {cardBg};">
+  <div class="bubble relative isolate rounded-[10px] rounded-bl-none px-4.5 pt-4.5 pb-5.5" style="background: {cardBg};">
     <div class="flex gap-3.5">
       <!-- Avatar: inside the bubble, left column, mt-5 offsets it down slightly -->
       {#if avatarUrl}
