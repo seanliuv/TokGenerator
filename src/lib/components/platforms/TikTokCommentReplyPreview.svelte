@@ -26,7 +26,7 @@
 	Outer wrapper: pb-[2.5em] reserves space below bubble so the tail is visible.
 	--bubble-bg drives the tail color via CSS variable.
 -->
-<div class="w-110 select-none font-sans pb-[2.5em]" style="--bubble-bg: {cardBg};">
+<div class="w-110 select-none pb-[2.5em]" style="font-family: 'TikTok Sans', sans-serif; --bubble-bg: {cardBg};">
   <!--
 		Bubble: rounded-bl-none keeps the bottom-left corner sharp so the tail
 		merges seamlessly. No overflow:hidden so the tail can peek out below.
@@ -52,7 +52,7 @@
           {#if isVerified}{@render badge()}{/if}
           <span>comment</span>
         </div>
-        <p class="mt-1.5 wrap-break-word text-[28px] font-extrabold leading-tight" style="color: {textPrimary};">
+        <p class="mt-1.5 wrap-break-word text-[28px] font-bold leading-tight" style="color: {textPrimary};">
           {commentText}
         </p>
       </div>
