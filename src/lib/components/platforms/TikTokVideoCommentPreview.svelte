@@ -32,10 +32,7 @@
   }
 </script>
 
-<div
-  class="w-105 select-none px-4 py-3"
-  style="background: {cardBg}; font-family: 'TikTok Sans', sans-serif;"
->
+<div class="w-105 select-none px-4 py-3" style="background: {cardBg}; font-family: 'TikTok Sans', sans-serif;">
   <!-- Avatar + content row -->
   <div class="flex items-start gap-3">
     <!-- Avatar -->
@@ -56,7 +53,7 @@
     <div class="min-w-0 flex-1">
       <!-- Username + badge -->
       <div class="mb-1 flex items-center gap-1">
-        <span class="text-[14px] font-normal leading-snug" style="color: {textMuted1};">
+        <span class="text-[14px] font-semibold leading-snug" style="color: {textMuted1};">
           {username}
         </span>
         {#if isVerified}
