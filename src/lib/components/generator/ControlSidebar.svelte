@@ -28,17 +28,23 @@
   <div class="hidden md:flex md:flex-1 md:flex-col md:gap-5 md:overflow-y-auto md:p-4">
     <PlatformSelector />
 
-    {#if commentStore.platform === 'tiktok'}
-      <div class="flex flex-col gap-5">
-        <AvatarInput />
-        {#if isVideoComment}
-          <Engagement />
-        {/if}
-        <CommentTextarea />
-      </div>
-    {/if}
+    <div class="flex flex-col gap-3">
+      <span class="text-[11px] font-semibold tracking-widest text-muted-foreground">COMMENT CONTROL</span>
+      {#if commentStore.platform === 'tiktok'}
+        <div class="flex flex-col gap-5">
+          <AvatarInput />
+          {#if isVideoComment}
+            <Engagement />
+          {/if}
+          <CommentTextarea />
+        </div>
+      {/if}
+    </div>
 
-    <CardThemeToggle />
+    <div class="flex flex-col gap-3">
+      <span class="text-[11px] font-semibold tracking-widest text-muted-foreground">THEME</span>
+      <CardThemeToggle />
+    </div>
   </div>
 
   <!-- Mobile layout (< md): tabbed interface -->
@@ -49,28 +55,31 @@
     </div>
 
     <!-- Tabs fill remaining space -->
-    <Tabs.Root bind:value={activeTab} class="flex flex-1 flex-col overflow-hidden gap-0">
-      <Tabs.List variant="line" class="grid w-full grid-cols-3 shrink-0 rounded-none border-b border-border px-3 pt-1">
-        <Tabs.Trigger value="avatar">Avatar</Tabs.Trigger>
-        <Tabs.Trigger value="comment">Comment</Tabs.Trigger>
-        <Tabs.Trigger value="theme">Theme</Tabs.Trigger>
-      </Tabs.List>
+    <div class="shrink-0 border-border p-3">
+      <span class="text-[11px] font-semibold tracking-widest text-muted-foreground">COMMENT CONTROL</span>
+      <Tabs.Root bind:value={activeTab} class="flex flex-1 flex-col overflow-hidden gap-0">
+        <Tabs.List variant="line" class="grid w-full grid-cols-3 shrink-0 rounded-none border-b border-border px-3 pt-1">
+          <Tabs.Trigger value="avatar">Avatar</Tabs.Trigger>
+          <Tabs.Trigger value="comment">Comment</Tabs.Trigger>
+          <Tabs.Trigger value="theme">Theme</Tabs.Trigger>
+        </Tabs.List>
 
-      <Tabs.Content value="avatar" class="flex flex-col gap-4 overflow-y-auto p-4 min-h-0">
-        <AvatarInput />
-        {#if isVideoComment}
-          <Engagement />
-        {/if}
-      </Tabs.Content>
+        <Tabs.Content value="avatar" class="flex flex-col gap-4 overflow-y-auto p-4 min-h-0">
+          <AvatarInput />
+          {#if isVideoComment}
+            <Engagement />
+          {/if}
+        </Tabs.Content>
 
-      <Tabs.Content value="comment" class="flex flex-col overflow-y-auto p-4 min-h-0">
-        <CommentTextarea />
-      </Tabs.Content>
+        <Tabs.Content value="comment" class="flex flex-col overflow-y-auto p-4 min-h-0">
+          <CommentTextarea />
+        </Tabs.Content>
 
-      <Tabs.Content value="theme" class="flex flex-col overflow-y-auto p-4 min-h-0">
-        <CardThemeToggle />
-      </Tabs.Content>
-    </Tabs.Root>
+        <Tabs.Content value="theme" class="flex flex-col overflow-y-auto p-4 min-h-0">
+          <CardThemeToggle />
+        </Tabs.Content>
+      </Tabs.Root>
+    </div>
   </div>
 
   <!-- Sticky export footer (both layouts) -->
