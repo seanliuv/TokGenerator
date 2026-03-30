@@ -3,10 +3,11 @@
   import PreviewPanel from '$lib/components/generator/PreviewPanel.svelte';
   import * as Card from '$lib/components/ui/card/index.js';
 
-  let previewNode: HTMLElement | null = $state(null);
+  let mobilePreviewNode: HTMLElement | null = $state(null);
+  let desktopPreviewNode: HTMLElement | null = $state(null);
 
   function getPreviewNode() {
-    return previewNode;
+    return window.innerWidth >= 768 ? desktopPreviewNode : mobilePreviewNode;
   }
 </script>
 
@@ -16,7 +17,7 @@
     <!-- On mobile: preview on top (dynamic height), controls below -->
     <div class="order-1 flex h-[20dvh] min-h-37.5 shrink-0 items-center justify-center border-b border-border bg-secondary/10 md:hidden">
       <!-- Mini preview panel for mobile -->
-      <PreviewPanel bindPreviewNode={(n) => (previewNode = n)} />
+      <PreviewPanel bindPreviewNode={(n) => (mobilePreviewNode = n)} />
     </div>
 
     <!-- Sidebar (left on desktop, below preview on mobile) -->
@@ -26,7 +27,7 @@
 
     <!-- Main preview (right on desktop, hidden at top on mobile) -->
     <div class="order-3 hidden flex-1 md:order-2 md:flex">
-      <PreviewPanel bindPreviewNode={(n) => (previewNode = n)} />
+      <PreviewPanel bindPreviewNode={(n) => (desktopPreviewNode = n)} />
     </div>
   </Card.Root>
 </section>
