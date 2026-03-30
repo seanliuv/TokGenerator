@@ -15,19 +15,11 @@ import {
 // ── Identity ─────────────────────────────────────────────────────────────────
 
 export const SITE_NAME = 'CommentGen';
+export const SITE_TITLE = 'Free TikTok Comment Generator';
+export const SITE_METADATA= 'Free TikTok comment generator. Create realistic TikTok comment screenshots instantly — video comments, bubble replies, light & dark themes. No login, no watermarks.';
 export const SITE_TAGLINE = 'Free TikTok comment screenshot generator. No login, no watermarks.';
 export const SITE_DESCRIPTION =
   'CommentGen is a free online tool for generating realistic TikTok comment screenshots. Create video comment images and bubble reply images — complete with avatars, verified badges, likes, and timestamps. No sign-up required.';
-
-// ── Navigation ────────────────────────────────────────────────────────────────
-
-export const navLinks = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Generator', href: '#generator' },
-  { label: 'Features', href: '#features' },
-  { label: 'Usage', href: '#usage' },
-  { label: 'FAQ', href: '#faq' },
-];
 
 // ── Social links ──────────────────────────────────────────────────────────────
 

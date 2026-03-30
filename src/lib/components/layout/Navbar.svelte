@@ -1,7 +1,15 @@
 <script lang="ts">
   import { Sun, Moon, Menu, X } from '@lucide/svelte';
   import { toggleMode, mode } from 'mode-watcher';
-  import { SITE_NAME, navLinks } from '$lib/config/site';
+  import { SITE_NAME } from '$lib/config/site';
+
+  export const navLinks = [
+    { label: 'Home', href: '#hero' },
+    { label: 'Generator', href: '#generator' },
+    { label: 'Features', href: '#features' },
+    { label: 'Usage', href: '#usage' },
+    { label: 'FAQ', href: '#faq' },
+  ];
 
   let mobileMenuOpen = $state(false);
 </script>
