@@ -55,9 +55,9 @@
     </div>
 
     <!-- Tabs fill remaining space -->
-    <div class="shrink-0 border-border p-3">
+    <div class="flex-1 flex flex-col min-h-0 border-border p-3">
       <span class="text-[11px] font-semibold tracking-widest text-muted-foreground">COMMENT CONTROL</span>
-      <Tabs.Root bind:value={activeTab} class="flex flex-1 flex-col overflow-hidden gap-0">
+      <Tabs.Root bind:value={activeTab} class="flex flex-1 flex-col min-h-0 gap-0">
         <Tabs.List variant="line" class="grid w-full grid-cols-3 shrink-0 rounded-none border-b border-border px-3 pt-1">
           <Tabs.Trigger value="avatar">Avatar</Tabs.Trigger>
           <Tabs.Trigger value="comment">Comment</Tabs.Trigger>
