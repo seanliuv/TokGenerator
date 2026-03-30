@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Heart, MessageCircle, Clock, Wand2 } from '@lucide/svelte';
+  import { Heart, MessageCircle, Clock, RefreshCcw } from '@lucide/svelte';
   import { commentStore } from '$lib/stores/comment.svelte';
   import type { TimeUnit } from '$lib/stores/comment.svelte';
   import { Input } from '$lib/components/ui/input/index.js';
@@ -95,7 +95,7 @@
       title="Randomize metrics"
       class="h-9 flex-1 shrink-0 rounded-xl border-border bg-secondary/30 text-muted-foreground/80 transition-all hover:bg-secondary/60 hover:text-foreground active:scale-90"
     >
-      <Wand2 size={13} class="transition-transform duration-500 {isSpinning ? 'rotate-360' : ''}" />
+      <RefreshCcw size={13} class="transition-transform duration-500 {isSpinning ? 'rotate-360' : ''}" />
     </Button>
   </div>
 </div>
