@@ -1,7 +1,7 @@
 import { toPng, toBlob } from 'html-to-image';
 
 const EXPORT_OPTIONS = {
-	pixelRatio: 2,
+	pixelRatio: 4,
 	quality: 1,
 	skipFonts: false,
 	// Exclude UI controls that overlap the card in the DOM

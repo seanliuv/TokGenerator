@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **Language**: TypeScript
 - **Package Manager**: pnpm
-- **Framework**: SvelteKit 2 + Svelte 5 (Runes)
+- **Framework**: SvelteKit 2 + Svelte 5 (Runes) + html-to-image + mode-watcher
 - **Styling**: Tailwind CSS v4 + shadcn-svelte (via bits-ui)
 - **Deploy Target**: Cloudflare Workers (`@sveltejs/adapter-cloudflare`)
 - **Add-ons**: eslint, vitest, tailwindcss, sveltekit-adapter, mdsvex, mcp

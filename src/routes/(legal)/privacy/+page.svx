@@ -1,0 +1,101 @@
+<svelte:head>
+  <title>Privacy Policy — CommentGen</title>
+  <meta name="description" content="CommentGen privacy policy. Learn what data we collect, how we use it, and your rights." />
+</svelte:head>
+
+# Privacy Policy
+
+**Effective date: March 30, 2026**
+
+CommentGen ("we", "us", or "our") operates the CommentGen website (the "Service"). This page explains our practices regarding any information that may be involved when you use the Service.
+
+We have designed CommentGen to be a privacy-respecting tool. **We do not require an account, we do not track you, and we do not store your content.**
+
+---
+
+## What Data We Collect
+
+### Information you provide
+
+CommentGen runs entirely in your browser. The username, comment text, and avatar you enter are used only to render a preview image locally — this data is **never sent to our servers**.
+
+### Avatar generation
+
+If you use the random avatar feature, your browser makes a request to **[randomuser.me](https://randomuser.me)**, a third-party public API. This request may include your IP address as part of the standard HTTP request. We have no control over randomuser.me's data practices. Refer to their privacy policy for details.
+
+If you upload a custom avatar image, the file is read locally in your browser using the File API and is never uploaded anywhere.
+
+### Automatically collected data
+
+Like most websites, our hosting infrastructure may log standard HTTP request data such as your IP address, browser type, referring URL, and pages visited. This data is used solely for security monitoring and diagnostic purposes and is not sold or shared with third parties.
+
+We do not use analytics services, advertising trackers, or any third-party pixels on this site.
+
+---
+
+## Cookies and Local Storage
+
+CommentGen does not use cookies. We do not set any tracking cookies or advertising cookies.
+
+Your browser's local storage may be used to remember your theme preference (light/dark mode). This data never leaves your device.
+
+---
+
+## How We Use Information
+
+We use the minimal data described above only to:
+
+- Deliver and maintain the Service
+- Monitor for abuse or security incidents
+- Diagnose technical problems
+
+We do **not** sell, rent, or share your data with third parties for marketing or advertising purposes.
+
+---
+
+## Children's Privacy
+
+CommentGen is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has submitted personal information through our Service, please contact us and we will promptly delete it.
+
+---
+
+## Third-Party Services
+
+The Service may link to or interact with the following third-party services:
+
+| Service | Purpose | Their Privacy Policy |
+|---|---|---|
+| randomuser.me | Random avatar generation (optional) | [randomuser.me](https://randomuser.me) |
+| Cloudflare | Hosting and edge delivery | [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/) |
+
+We are not responsible for the privacy practices of these third parties.
+
+---
+
+## Data Retention
+
+Because we do not collect or store your comment content, usernames, or generated images, there is no user data for us to retain or delete.
+
+---
+
+## Your Rights
+
+Depending on your jurisdiction, you may have rights regarding your personal data, including the right to access, correct, or delete it. Since we hold no personally identifiable information about you (beyond standard server logs), these rights are already effectively exercised by design.
+
+To make a specific request, contact us via the channels below.
+
+---
+
+## Changes to This Policy
+
+We may update this Privacy Policy from time to time. When we do, we will revise the "Effective date" at the top of this page. We encourage you to review this page periodically.
+
+---
+
+## Contact Us
+
+If you have questions or concerns about this Privacy Policy, you can reach us through:
+
+- **GitHub**: [github.com/commentgen](https://github.com)
+- **Discord**: [Join our server](https://discord.com)
+- **X**: [@commentgen](https://x.com)

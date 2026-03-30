@@ -1,15 +1,9 @@
 <script lang="ts">
   import { Sun, Moon, Menu, X } from '@lucide/svelte';
   import { toggleMode, mode } from 'mode-watcher';
+  import { SITE_NAME, navLinks } from '$lib/config/site';
 
   let mobileMenuOpen = $state(false);
-
-  const navLinks = [
-    { label: 'Home', href: '#generator' },
-    { label: 'Features', href: '#features' },
-    { label: 'Usage', href: '#usage' },
-    { label: 'FAQ', href: '#faq' },
-  ];
 </script>
 
 <header
@@ -20,7 +14,7 @@
     <!-- Logo -->
     <a href="/" class="flex shrink-0 items-center gap-2 no-underline" onclick={() => (mobileMenuOpen = false)}>
       <span class="flex h-7 w-7 items-center justify-center rounded-md text-sm text-white" style="background: var(--gen-accent);">✦</span>
-      <span class="text-sm font-bold tracking-tight text-foreground">CommentGen</span>
+      <span class="text-sm font-bold tracking-tight text-foreground">{SITE_NAME}</span>
     </a>
 
     <!-- Desktop nav links -->
