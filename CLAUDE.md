@@ -53,18 +53,49 @@ This avoids Svelte context and keeps the DOM ref scoped to the section.
 
 ```
 src/lib/components/
-├── layout/          # Navbar
-├── sections/        # Full-page sections (Generator, Features, Usage, FAQ)
-├── generator/       # ControlSidebar + PreviewPanel (dispatchers)
-├── atoms/           # Platform-agnostic controls (AvatarInput, Engagement, etc.)
-├── platforms/       # One Controls + one Preview per (platform × subType)
+├── layout/          # Navbar — sticky header with nav links + theme toggle
+├── sections/        # Full-page sections (GeneratorSection, FeaturesSection, UsageSection, FaqSection)
+├── generator/       # ControlSidebar + PreviewPanel — layout orchestration for the generator UI
+├── atoms/           # Store-connected interactive controls (AvatarInput, Engagement, CommentTextarea,
+│                    #   CardThemeToggle, PlatformSelector, ExportButtons)
+├── platforms/       # Platform-specific pure preview renderers (props-only, no store reads)
+│                    #   TikTokVideoCommentPreview, TikTokCommentReplyPreview
 ├── magic/           # Decorative animation components (ShineBorder)
-└── ui/              # shadcn-svelte primitives (button, select, tabs, etc.)
+└── ui/              # shadcn-svelte primitives built on bits-ui
+    ├── avatar/      # Avatar, AvatarImage, AvatarFallback, AvatarBadge, AvatarGroup
+    ├── button/      # Button (variants: default, outline, secondary, ghost, destructive, link)
+    ├── card/        # Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter
+    ├── dropdown-menu/ # Full dropdown menu family (items, checkboxes, radios, sub-menus, portal)
+    ├── input/       # Input (text / number; excludes file type)
+    ├── select/      # Select, SelectTrigger, SelectContent, SelectItem, SelectGroup, portal
+    ├── separator/   # Separator
+    ├── tabs/        # Tabs, TabsList (line variant supported), TabsTrigger, TabsContent
+    ├── textarea/    # Textarea
+    ├── toggle/      # Toggle (variants: default, outline, ghost)
+    └── toggle-group/ # ToggleGroup + ToggleGroupItem
 ```
 
-**ControlSidebar** dynamically renders the active platform's `*Controls` component based on `commentStore.platform` + `commentStore.subType`.
+#### Component Hierarchy
 
-**PreviewPanel** renders the active platform's `*Preview` component, passing store values as props. Preview components **do not read the store directly** — they receive all data as props.
+```
+GeneratorSection                      ← orchestrator; owns previewNode refs (mobile + desktop)
+├── ControlSidebar                    ← layout: desktop = single column, mobile = tabbed (Avatar/Comment/Theme)
+│   ├── PlatformSelector              ← sets commentStore.platform + .subType
+│   ├── AvatarInput                   ← avatar fetch (randomuser.me) or file upload; sets username + isVerified
+│   ├── Engagement                    ← time/likes/replies controls; shown only for video-comment subType
+│   ├── CommentTextarea               ← 150-char textarea + emoji picker (emoji-picker-element, lazy)
+│   ├── CardThemeToggle               ← light/dark toggle for preview card
+│   └── ExportButtons                 ← PNG export + copy-to-clipboard; receives getPreviewNode callback
+└── PreviewPanel (×2: mobile/desktop) ← reads store; scales 0.8× on mobile, 1× on desktop
+    ├── TikTokCommentReplyPreview     ← speech-bubble layout; pure props (username, avatarUrl, theme, …)
+    └── TikTokVideoCommentPreview     ← full comment card with engagement row; pure props
+```
+
+**ControlSidebar** composes atoms directly — there is no separate per-platform `*Controls` component at present; TikTok is the only active platform.
+
+**PreviewPanel** selects which platform preview to render based on `commentStore.platform` + `commentStore.subType`. Preview components **do not read the store** — they receive all data as props from PreviewPanel.
+
+**Engagement** is rendered conditionally: only when `commentStore.subType === 'video-comment'`.
 
 ### Styling
 
