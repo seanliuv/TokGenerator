@@ -12,21 +12,21 @@
     aria-hidden="true"
   ></div>
 
-  <div class="relative mx-auto flex w-full max-w-7xl flex-1 flex-col items-center text-center">
+  <div class="relative mx-auto flex w-full max-w-7xl flex-1 flex-col items-center">
     <!-- H1 -->
     <h1
-      class="mb-5 bg-linear-to-r from-[#FF0050] via-[#FF8C00] to-[#00F2EA] bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent md:text-5xl lg:text-6xl"
+      class="mb-5 bg-linear-to-r from-[#FF0050] via-[#FF8C00] to-[#00F2EA] bg-clip-text text-4xl font-bold leading-tight tracking-tight text-center text-transparent md:text-5xl lg:text-6xl"
     >
       {hero.h1}
     </h1>
 
     <!-- Subtext -->
-    <p class="mx-auto mb-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+    <p class="mx-auto mb-6 max-w-xl text-base text-center leading-relaxed text-muted-foreground md:text-lg">
       {hero.subTitle}
     </p>
 
     <!-- Stats row -->
-    <div class="mb-8 flex shrink-0 flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+    <div class="mb-8 flex shrink-0 flex-wrap items-center justify-center text-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
       <div class="flex items-center gap-1.5">
         <Shield size={14} color="var(--gen-accent)" />
         <span>{hero.stats[0].label}</span>
