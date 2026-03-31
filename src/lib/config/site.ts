@@ -18,7 +18,7 @@ export const SITE_NAME = 'TokGenerator';
 export const SITE_TITLE = `TikTok Comment Generator | ${SITE_NAME}`;
 export const SITE_DESCRIPTION =
   'TokGenerator is a free online tool for creating fake TikTok comment screenshots. Create video comment and bubble reply images — complete with avatars, verified badges, likes, and timestamps. No sign-up required.';
-export const SITE_TAGLINE = 'Free TikTok comment screenshot generator. No login, no watermarks.';
+export const SITE_TAGLINE = 'Disclaimer: We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with TikTok, ByteDance Ltd, or any of its subsidiaries or its affiliates.';
 
 // ── Social links ──────────────────────────────────────────────────────────────
 
@@ -31,7 +31,7 @@ export const socialLinks = {
 // ── Hero section ──────────────────────────────────────────────────────────────
 
 export const hero = {
-  h1: 'Tiktok Comment Generator',
+  h1: 'TikTok Comment Generator',
   subTitle: 'Create pixel-perfect TikTok comment images — video comments, bubble replies, light & dark themes. Free forever, no watermarks, no login required.',
   stats: [
     { label: '100% Free Forever' },
@@ -136,9 +136,9 @@ interface Faq {
 
 export const faqs: Faq[] = [
   {
-    question: 'What is CommentGen?',
+    question: 'What is TokGenerator?',
     answer:
-      'CommentGen is a free online tool for generating realistic TikTok comment screenshots. You can create video comment images and bubble reply images that look exactly like they come from the real TikTok app — complete with avatars, verified badges, likes, and timestamps.',
+      'TokGenerator is a free online tool for generating realistic TikTok comment screenshots. You can create video comment images and bubble reply images that look exactly like they come from the real TikTok app — complete with avatars, verified badges, likes, and timestamps.',
   },
   {
     question: 'Is it completely free to use?',
@@ -148,7 +148,7 @@ export const faqs: Faq[] = [
   {
     question: 'What TikTok comment styles are available?',
     answer:
-      'CommentGen currently supports two TikTok styles: Video Comment (a full comment card with likes, replies, and timestamp) and Bubble Reply (a speech bubble format for comment reply conversations). Both support light and dark themes.',
+      'TokGenerator currently supports two TikTok styles: Video Comment (a full comment card with likes, replies, and timestamp) and Bubble Reply (a speech bubble format for comment reply conversations). Both support light and dark themes.',
   },
   {
     question: 'Can I use my own avatar photo?',
