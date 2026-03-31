@@ -1,56 +1,32 @@
 <script lang="ts">
-  import { Sparkles, Download, Shield, Zap, ArrowDown } from '@lucide/svelte';
   import { hero } from '$lib/config/site';
+  import { Download, Shield, Zap } from '@lucide/svelte';
+  import Generator from '$lib/components/generator/Generator.svelte';
 </script>
 
-<section id="hero" class="relative overflow-hidden border-b border-border px-6 py-20 md:py-28">
-  <!-- Subtle blue radial glow at top -->
+<section id="hero" class="relative flex min-h-svh flex-col overflow-hidden border-b border-border md:px-6 md:py-16">
+  <!-- Subtle TikTok dual-tone radial glow at top -->
   <div
     class="pointer-events-none absolute inset-0"
-    style="background: radial-gradient(ellipse 70% 45% at 50% -5%, oklch(0.55 0.18 250 / 0.08), transparent);"
+    style="background: radial-gradient(ellipse 60% 40% at 20% 0%, oklch(0.55 0.22 0 / 0.07), transparent), radial-gradient(ellipse 60% 40% at 80% 0%, oklch(0.75 0.18 195 / 0.07), transparent);"
     aria-hidden="true"
   ></div>
 
-  <div class="relative mx-auto max-w-4xl text-center">
-    <!-- Badge -->
-    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-sm">
-      <span class="inline-block size-1.5 rounded-full" style="background: var(--gen-accent);"></span>
-      {hero.badge}
-    </div>
-
+  <div class="relative mx-auto flex w-full max-w-7xl flex-1 flex-col items-center text-center">
     <!-- H1 -->
-    <h1 class="mb-5 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-      {hero.h1}<br />
-      <span style="color: var(--gen-accent);">{hero.h1Accent}</span><br />
-      {hero.h1End}
+    <h1
+      class="mb-5 bg-linear-to-r from-[#FF0050] via-[#FF8C00] to-[#00F2EA] bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent md:text-5xl lg:text-6xl"
+    >
+      {hero.h1}
     </h1>
 
     <!-- Subtext -->
-    <p class="mx-auto mb-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-      {hero.subtext}
+    <p class="mx-auto mb-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+      {hero.subTitle}
     </p>
 
-    <!-- CTAs -->
-    <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-      <a
-        href={hero.ctas[0].href}
-        class="inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white no-underline transition-opacity hover:opacity-90"
-        style="background: var(--gen-accent);"
-      >
-        <Sparkles size={15} />
-        {hero.ctas[0].label}
-      </a>
-      <a
-        href={hero.ctas[1].href}
-        class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground no-underline transition-colors hover:bg-secondary"
-      >
-        {hero.ctas[1].label}
-        <ArrowDown size={14} />
-      </a>
-    </div>
-
     <!-- Stats row -->
-    <div class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+    <div class="mb-8 flex shrink-0 flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
       <div class="flex items-center gap-1.5">
         <Shield size={14} color="var(--gen-accent)" />
         <span>{hero.stats[0].label}</span>
@@ -65,6 +41,11 @@
         <Download size={14} color="var(--gen-accent)" />
         <span>{hero.stats[2].label}</span>
       </div>
+    </div>
+
+    <!-- Generator -->
+    <div class="flex flex-1 flex-col items-center min-h-0 w-full">
+      <Generator />
     </div>
   </div>
 </section>

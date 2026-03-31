@@ -5,7 +5,6 @@
 
   export const navLinks = [
     { label: 'Home', href: '#hero' },
-    { label: 'Generator', href: '#generator' },
     { label: 'Features', href: '#features' },
     { label: 'Usage', href: '#usage' },
     { label: 'FAQ', href: '#faq' },

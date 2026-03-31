@@ -14,34 +14,25 @@ import {
 
 // ── Identity ─────────────────────────────────────────────────────────────────
 
-export const SITE_NAME = 'CommentGen';
-export const SITE_TITLE = 'Free TikTok Comment Generator';
-export const SITE_METADATA= 'Free TikTok comment generator. Create realistic TikTok comment screenshots instantly — video comments, bubble replies, light & dark themes. No login, no watermarks.';
-export const SITE_TAGLINE = 'Free TikTok comment screenshot generator. No login, no watermarks.';
+export const SITE_NAME = 'TokGenerator';
+export const SITE_TITLE = `TikTok Comment Generator | ${SITE_NAME}`;
 export const SITE_DESCRIPTION =
-  'CommentGen is a free online tool for generating realistic TikTok comment screenshots. Create video comment images and bubble reply images — complete with avatars, verified badges, likes, and timestamps. No sign-up required.';
+  'TokGenerator is a free online tool for creating fake TikTok comment screenshots. Create video comment and bubble reply images — complete with avatars, verified badges, likes, and timestamps. No sign-up required.';
+export const SITE_TAGLINE = 'Free TikTok comment screenshot generator. No login, no watermarks.';
 
 // ── Social links ──────────────────────────────────────────────────────────────
 
 export const socialLinks = {
-  x: 'https://x.com',
-  github: 'https://github.com',
+  x: 'https://x.com/seanliuv',
+  github: 'https://github.com/seanliuv',
   discord: 'https://discord.com',
 };
 
 // ── Hero section ──────────────────────────────────────────────────────────────
 
 export const hero = {
-  badge: 'Free TikTok Comment Generator — No Sign-up Required',
-  h1: 'Generate Realistic',
-  h1Accent: 'TikTok Comment',
-  h1End: 'Screenshots Instantly',
-  subtext:
-    'Create pixel-perfect TikTok comment images — video comments, bubble replies, light & dark themes. Free forever, no watermarks, no login required.',
-  ctas: [
-    { label: 'Start Creating Free', href: '#generator', primary: true },
-    { label: 'See Features', href: '#features', primary: false },
-  ],
+  h1: 'Tiktok Comment Generator',
+  subTitle: 'Create pixel-perfect TikTok comment images — video comments, bubble replies, light & dark themes. Free forever, no watermarks, no login required.',
   stats: [
     { label: '100% Free Forever' },
     { label: 'No Login Required' },
