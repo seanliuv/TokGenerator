@@ -16,7 +16,7 @@
   });
 </script>
 
-<div class="flex flex-1 items-center justify-center overflow-hidden bg-secondary/30 p-1 md:p-8">
+<div class="flex flex-1 items-center justify-center overflow-hidden bg-secondary p-1 md:p-8">
   <!-- Mobile zoom wrapper – excluded from PNG export -->
   <div class="[zoom:0.8] md:[zoom:1]">
     <!-- The ref wrapper is what gets exported to PNG -->
