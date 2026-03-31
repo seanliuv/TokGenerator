@@ -22,7 +22,7 @@
     <!-- The ref wrapper is what gets exported to PNG -->
     <div bind:this={previewRef} class="inline-block">
       {#if commentStore.platform === 'tiktok'}
-        {#if commentStore.subType === 'bubble-comment-reply'}
+        {#if commentStore.subType === 'bubble-reply-comment'}
           <TikTokCommentReplyPreview
             username={commentStore.username}
             avatarUrl={commentStore.avatarUrl}
