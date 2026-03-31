@@ -19,7 +19,7 @@
   </div>
 
   <!-- Sidebar (left on desktop, below preview on mobile) -->
-  <div class="flex flex-1 flex-col overflow-hidden md:flex-none md:border-r md:border-border">
+  <div class="flex h-[70dvh] flex-col overflow-hidden md:h-auto md:flex-none md:border-r md:border-border">
     <ControlSidebar {getPreviewNode} />
   </div>
 
