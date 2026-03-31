@@ -1,6 +1,7 @@
 <script lang="ts">
   import { SiX, SiGithub, SiDiscord } from '@icons-pack/svelte-simple-icons';
   import { SITE_NAME, SITE_TAGLINE, socialLinks } from '$lib/config/site';
+  import favicon from '$lib/assets/favicon.svg';
 </script>
 
 <footer class="border-t border-border bg-secondary/20 px-6 py-12">
@@ -10,9 +11,7 @@
       <!-- Logo + tagline -->
       <div class="flex flex-col gap-1.5">
         <a href="#hero" class="flex items-center gap-2 no-underline">
-          <span class="flex h-7 w-7 items-center justify-center rounded-md text-sm text-white" style="background: var(--gen-accent);"
-            >✦</span
-          >
+          <img src={favicon} alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
           <span class="text-sm font-bold tracking-tight text-foreground">{SITE_NAME}</span>
         </a>
         <p class="text-xs text-muted-foreground">{SITE_TAGLINE}</p>
@@ -53,7 +52,8 @@
     <!-- Bottom row: legal links + copyright -->
     <div class="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
       <p class="text-xs text-muted-foreground">
-        © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+        © {new Date().getFullYear()}
+        {SITE_NAME}. All rights reserved.
       </p>
       <div class="flex items-center gap-4 text-xs text-muted-foreground">
         <a href="/privacy" class="no-underline transition-colors hover:text-foreground"> Privacy Policy </a>

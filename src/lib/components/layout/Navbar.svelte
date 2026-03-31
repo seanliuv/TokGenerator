@@ -2,6 +2,7 @@
   import { Sun, Moon, Menu, X } from '@lucide/svelte';
   import { toggleMode, mode } from 'mode-watcher';
   import { SITE_NAME } from '$lib/config/site';
+  import favicon from '$lib/assets/favicon.svg';
 
   export const navLinks = [
     { label: 'Home', href: '#hero' },
@@ -20,7 +21,7 @@
   <div class="mx-auto flex h-14 w-full max-w-7xl items-center gap-6 px-4 md:px-6">
     <!-- Logo -->
     <a href="/" class="flex shrink-0 items-center gap-2 no-underline" onclick={() => (mobileMenuOpen = false)}>
-      <span class="flex h-7 w-7 items-center justify-center rounded-md text-sm text-white" style="background: var(--gen-accent);">✦</span>
+      <img src={favicon} alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
       <span class="text-sm font-bold tracking-tight text-foreground">{SITE_NAME}</span>
     </a>
 
