@@ -1,25 +1,27 @@
 <svelte:head>
-  <title>Terms of Service — CommentGen</title>
-  <meta name="description" content="CommentGen terms of service. Understand the rules and guidelines for using our free TikTok comment generator tool." />
+  <title>Terms of Service — TokGenerator</title>
+  <meta name="description" content="TokGenerator terms of service. Understand the rules for using TokGenerator, the leading TikTok comment mockup tool. Covers acceptable use, SaaS subscriptions, and trademark disclaimers." />
 </svelte:head>
 
 # Terms of Service
 
-**Effective date: March 30, 2026**
+**Effective date: March 31, 2026**
 
-Please read these Terms of Service ("Terms") carefully before using CommentGen (the "Service"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.
+Please read these Terms of Service ("Terms") carefully before using TokGenerator (the "Service"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.
 
 ---
 
 ## 1. Description of the Service
 
-CommentGen is a free, browser-based tool that allows users to generate image mockups resembling TikTok comment screenshots. The Service is provided "as is" at no charge, with no account or registration required.
+TokGenerator is a free tool that allows users to generate image mockups resembling TikTok comment screenshots. The Service is provided "as is" at no charge, with no account or registration required.
+
+The Service is supported by advertising. You agree that we may serve third-party advertisements (such as Google AdSense) on the Service.
 
 ---
 
 ## 2. Acceptable Use
 
-You may use CommentGen for:
+You may use TokGenerator for:
 
 - **Educational purposes** — demonstrating how social media interfaces work, teaching design or media literacy
 - **Mockups and prototypes** — creating placeholder content for design presentations, UI demonstrations, or marketing materials
@@ -47,13 +49,13 @@ We reserve the right to block access to the Service for any use we determine, at
 
 ## 4. Intellectual Property
 
-### CommentGen content
+### TokGenerator content
 
-The CommentGen name, logo, and website design are the property of their respective owners. The underlying source code is open-source — see our GitHub repository for license details.
+The TokGenerator name, logo, and website design are the property of their respective owners. The underlying source code is open-source — see our GitHub repository for license details.
 
 ### TikTok trademark notice
 
-TikTok is a registered trademark of ByteDance Ltd. CommentGen is an independent project and is **not affiliated with, endorsed by, or sponsored by TikTok or ByteDance** in any way. The visual elements replicated in generated images are used solely to enable mockup creation for educational and creative purposes.
+**Non-Affiliation: TokGenerator is a strictly independent design tool. We have no affiliation, association, or official connection with TikTok, ByteDance Ltd., or any of their subsidiaries. The term "Tok" is used for descriptive purposes only. The mockup interface is a creative reproduction intended for illustrative use and does not imply any endorsement by the trademark owner.**
 
 ### Your generated images
 
@@ -61,7 +63,17 @@ You retain full ownership of the images you generate using the Service. By using
 
 ---
 
-## 5. Disclaimer of Warranties
+## 5. Subscriptions and Payments
+Premium Services: While we offer a free tier, certain features or increased usage limits may require a paid subscription ("Premium Services").
+If you purchase a subscription via **Stripe**, you agree to the specific billing terms presented at checkout. You are responsible for maintaining the confidentiality of your account. We reserve the right to adjust pricing or limit free-tier access (enforced via technical identifiers) at our discretion to prevent abuse.
+
+Billing: Payments are processed via Stripe. You must provide accurate billing information. Subscriptions may automatically renew unless cancelled.
+
+Refunds: Due to the digital nature of our Service and the availability of a free tier for testing, all sales are generally final. We reserve the right to issue refunds at our sole discretion.
+
+---
+
+## 6. Disclaimer of Warranties
 
 The Service is provided **"as is"** and **"as available"** without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
 
@@ -73,42 +85,40 @@ We do not warrant that:
 
 ---
 
-## 6. Limitation of Liability
+## 7. Limitation of Liability
 
-To the maximum extent permitted by applicable law, CommentGen and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, the Service — even if we have been advised of the possibility of such damages.
+To the maximum extent permitted by applicable law, TokGenerator and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, the Service — even if we have been advised of the possibility of such damages.
 
 Our total liability to you for any claim arising from these Terms or your use of the Service shall not exceed the amount you have paid us (which, for a free service, is zero).
 
 ---
 
-## 7. Indemnification
+## 8. Indemnification
 
-You agree to indemnify and hold harmless CommentGen and its operators from any claims, losses, damages, liabilities, costs, and expenses (including reasonable legal fees) arising from your use of the Service or your violation of these Terms.
+You agree to indemnify and hold harmless TokGenerator and its operators from any claims, losses, damages, liabilities, costs, and expenses (including reasonable legal fees) arising from your use of the Service or your violation of these Terms.
 
 ---
 
-## 8. Changes to the Service
+## 9. Changes to the Service
 
 We reserve the right to modify, suspend, or discontinue the Service (or any part of it) at any time, with or without notice. We will not be liable to you or any third party for any modification, suspension, or discontinuation.
 
 ---
 
-## 9. Changes to These Terms
+## 10. Changes to These Terms
 
 We may update these Terms from time to time. When we do, we will revise the "Effective date" at the top of this page. Continued use of the Service after changes are posted constitutes your acceptance of the revised Terms.
 
 ---
 
-## 10. Governing Law
+## 11. Governing Law
 
-These Terms shall be governed by and construed in accordance with applicable law. Any disputes arising from these Terms will be resolved through good-faith negotiation before any formal proceedings.
+These Terms shall be governed by and construed in accordance with law of United States, State of Delaware. Any disputes arising from these Terms will be resolved through good-faith negotiation before any formal proceedings.
 
 ---
 
-## 11. Contact
+## 12. Contact
 
 If you have questions about these Terms, please reach out:
 
-- **GitHub**: [github.com/commentgen](https://github.com)
-- **Discord**: [Join our server](https://discord.com)
-- **X**: [@commentgen](https://x.com)
+- **Email**: [support@tokgenerator.com](mailto:support@tokgenerator.com)

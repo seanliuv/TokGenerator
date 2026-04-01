@@ -11,15 +11,15 @@
 </script>
 
 <section id="faq" class="px-6 py-20 md:py-28">
-  <div class="mx-auto max-w-2xl">
+  <div class="mx-auto max-w-5xl">
     <!-- Section header -->
     <div class="mb-12 text-center">
-      <div class="mb-4 inline-flex items-center rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-semibold text-muted-foreground">
+      <div
+        class="mb-4 inline-flex items-center rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-semibold text-muted-foreground"
+      >
         FAQ
       </div>
-      <h2 class="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-        Frequently asked questions
-      </h2>
+      <h2 class="text-3xl font-bold tracking-tight text-foreground md:text-4xl">Frequently asked questions</h2>
     </div>
 
     <!-- Accordion -->
@@ -32,10 +32,7 @@
             aria-expanded={openIndex === i}
           >
             <span>{faq.question}</span>
-            <span
-              class="shrink-0 transition-transform duration-200"
-              class:rotate-180={openIndex === i}
-            >
+            <span class="shrink-0 transition-transform duration-200" class:rotate-180={openIndex === i}>
               <ChevronDown size={16} class="text-muted-foreground" />
             </span>
           </button>

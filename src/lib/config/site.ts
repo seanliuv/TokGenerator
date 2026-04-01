@@ -18,7 +18,7 @@ export const SITE_NAME = 'TokGenerator';
 export const SITE_TITLE = `TikTok Comment Generator | ${SITE_NAME}`;
 export const SITE_DESCRIPTION =
   'TokGenerator is a free online tool for creating fake TikTok comment screenshots. Create video comment and bubble reply images — complete with avatars, verified badges, likes, and timestamps. No sign-up required.';
-export const SITE_TAGLINE = 'Disclaimer: We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with TikTok, ByteDance Ltd, or any of its subsidiaries or its affiliates.';
+export const SITE_TAGLINE = 'We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with TikTok, ByteDance Ltd.';
 
 // ── Social links ──────────────────────────────────────────────────────────────
 

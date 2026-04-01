@@ -3,10 +3,12 @@
 </script>
 
 <section id="usage" class="border-b border-border bg-secondary/20 px-6 py-20 md:py-28">
-  <div class="mx-auto max-w-5xl">
+  <div class="mx-auto max-w-7xl">
     <!-- Section header -->
     <div class="mb-12 text-center">
-      <div class="mb-4 inline-flex items-center rounded-full border border-border bg-background px-4 py-1.5 text-xs font-semibold text-muted-foreground ring-1 ring-border">
+      <div
+        class="mb-4 inline-flex items-center rounded-full border border-border bg-background px-4 py-1.5 text-xs font-semibold text-muted-foreground ring-1 ring-border"
+      >
         How It Works
       </div>
       <h2 class="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -21,10 +23,7 @@
         <div class="flex gap-5 rounded-xl border border-border bg-card p-6">
           <!-- Step number -->
           <div class="shrink-0">
-            <span
-              class="block text-2xl font-bold leading-none tabular-nums"
-              style="color: oklch(0.55 0.18 250 / 0.35);"
-            >
+            <span class="block text-2xl font-bold leading-none tabular-nums" style="color: oklch(0.55 0.18 250 / 0.35);">
               {step.number}
             </span>
           </div>

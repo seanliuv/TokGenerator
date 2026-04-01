@@ -1,15 +1,15 @@
 <svelte:head>
-  <title>Privacy Policy — CommentGen</title>
-  <meta name="description" content="CommentGen privacy policy. Learn what data we collect, how we use it, and your rights." />
+  <title>Privacy Policy — TokGenerator</title>
+  <meta name="description" content="TokGenerator privacy policy. GDPR & CCPA compliant. Learn how we protect your data while using our TikTok comment tool." />
 </svelte:head>
 
 # Privacy Policy
 
-**Effective date: March 30, 2026**
+**Effective date: March 31, 2026**
 
-CommentGen ("we", "us", or "our") operates the CommentGen website (the "Service"). This page explains our practices regarding any information that may be involved when you use the Service.
+The TokGenerator Team ("we", "us", or "our") operates the TokGenerator website (the "Service"). This page explains our practices regarding any information that may be involved when you use the Service.
 
-We have designed CommentGen to be a privacy-respecting tool. **We do not require an account, we do not track you, and we do not store your content.**
+We have designed TokGenerator to be a privacy-respecting tool. **We do not require an account, we do not track you, and we do not store your content.**
 
 ---
 
@@ -17,46 +17,50 @@ We have designed CommentGen to be a privacy-respecting tool. **We do not require
 
 ### Information you provide
 
-CommentGen runs entirely in your browser. The username, comment text, and avatar you enter are used only to render a preview image locally — this data is **never sent to our servers**.
+TokGenerator runs entirely in your browser. The username, comment text, and avatar you enter are used only to render a design mockup locally — this data is **never sent to our servers**.
 
-### Avatar generation
+### Technical & Anti-Abuse Data
 
-If you use the random avatar feature, your browser makes a request to **[randomuser.me](https://randomuser.me)**, a third-party public API. This request may include your IP address as part of the standard HTTP request. We have no control over randomuser.me's data practices. Refer to their privacy policy for details.
-
-If you upload a custom avatar image, the file is read locally in your browser using the File API and is never uploaded anywhere.
-
-### Automatically collected data
-
-Like most websites, our hosting infrastructure may log standard HTTP request data such as your IP address, browser type, referring URL, and pages visited. This data is used solely for security monitoring and diagnostic purposes and is not sold or shared with third parties.
-
-We do not use analytics services, advertising trackers, or any third-party pixels on this site.
+Like most websites, our infrastructure logs standard HTTP request data. Additionally, to enforce daily free-tier limits and prevent automated abuse, we may generate a temporary, **non-identifiable device token** based on your IP address and browser metadata. This data is used strictly for rate limiting and security monitoring and is never sold or linked to any real-world identity.
 
 ---
 
-## Cookies and Local Storage
+## Cookies and Advertising
 
-CommentGen does not use cookies. We do not set any tracking cookies or advertising cookies.
+TokGenerator uses minimal local storage for preferences. To support our free Service, we partner with Google AdSense and other third-party vendors. These vendors use cookies to serve ads based on your prior visits to our website or other websites on the internet.
 
-Your browser's local storage may be used to remember your theme preference (light/dark mode). This data never leaves your device.
+Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site. You may opt out of personalized advertising by visiting Google Ads Settings. You may also opt out of a third-party vendor's use of cookies for personalized advertising by visiting www.aboutads.info.
 
 ---
 
 ## How We Use Information
 
-We use the minimal data described above only to:
+**Legal Basis for Processing:** We process your information based on our **legitimate interests** in securing our infrastructure, preventing service abuse, and fulfilling our commitment to provide a reliable service.
 
-- Deliver and maintain the Service
-- Monitor for abuse or security incidents
-- Diagnose technical problems
+We use the minimal data described above only to:
+- Deliver and maintain the Service (including enforcing daily export limits)
+- Monitor for abuse, bot activity, or security incidents
+- Diagnose and fix technical problems
 
 We do **not** sell, rent, or share your data with third parties for marketing or advertising purposes.
+
+California Privacy Rights (CCPA): We do not "sell" or "share" your personal information as defined by the CCPA. We do not use your sensitive personal information for any purposes other than to provide the Service.
+
+International Data Transfers: Our Service is hosted globally. By using the Service, you acknowledge that your standard request data (like IP address) may be transferred to and processed in countries outside of your own, including the United States, where data protection laws may differ.
 
 ---
 
 ## Children's Privacy
 
-CommentGen is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has submitted personal information through our Service, please contact us and we will promptly delete it.
+TokGenerator is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has submitted personal information through our Service, please contact us and we will promptly delete it.
 
+---
+
+## Payment Processing & Account Data
+
+While the current version of the Service does not require account registration, future premium features may require you to provide an email address and payment information. In such cases, payment processing will be handled by secure third-party providers (e.g., Stripe), and we will not store your full credit card details.
+
+When we transition to premium SaaS services, we will collect necessary account information (e.g., email address). We do not store your credit card information. All payments are processed by Stripe, who are independent Data Controllers. Their use of your personal information is governed by their respective Privacy Policies.
 ---
 
 ## Third-Party Services
@@ -65,8 +69,9 @@ The Service may link to or interact with the following third-party services:
 
 | Service | Purpose | Their Privacy Policy |
 |---|---|---|
-| randomuser.me | Random avatar generation (optional) | [randomuser.me](https://randomuser.me) |
 | Cloudflare | Hosting and edge delivery | [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/) |
+| Google AdSense | Advertising | [Google Adsense](https://policies.google.com/technologies/ads) |
+| Stripe |	SaaS Subscriptions | [stripe](https://stripe.com/privacy) |
 
 We are not responsible for the privacy practices of these third parties.
 
@@ -96,6 +101,4 @@ We may update this Privacy Policy from time to time. When we do, we will revise 
 
 If you have questions or concerns about this Privacy Policy, you can reach us through:
 
-- **GitHub**: [github.com/commentgen](https://github.com)
-- **Discord**: [Join our server](https://discord.com)
-- **X**: [@commentgen](https://x.com)
+- **Email**: [support@tokgenerator.com](mailto:support@tokgenerator.com)

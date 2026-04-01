@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SITE_NAME } from '$lib/config/site';
   import Navbar from '$lib/components/layout/Navbar.svelte';
   import Footer from '$lib/components/layout/Footer.svelte';
 
@@ -24,7 +25,7 @@
       >
         <path d="M19 12H5M12 5l-7 7 7 7" />
       </svg>
-      Back to CommentGen
+      Back to {SITE_NAME}
     </a>
   </div>
 
@@ -38,7 +39,7 @@
     prose-li:text-muted-foreground
     prose-a:text-foreground prose-a:font-medium prose-a:no-underline hover:prose-a:underline
     prose-strong:text-foreground
-    max-w-none"
+    max-w-7xl"
   >
     {@render children()}
   </article>
