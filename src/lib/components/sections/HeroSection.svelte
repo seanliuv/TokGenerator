@@ -47,5 +47,10 @@
     <div class="flex flex-1 flex-col items-center min-h-0 w-full">
       <Generator />
     </div>
+
+    <!-- Use Purpose Disclaimer -->
+    <div class="m-6 text-center text-sm text-gen-accent">
+      <p>For educational, promotional, and entertainment purposes only. Users are responsible for how they use the generated content.</p>
+    </div>
   </div>
 </section>
