@@ -16,14 +16,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-pnpm dev              # Start dev server
-pnpm build            # Production build
-pnpm preview          # Build + run with Wrangler locally
-pnpm check            # svelte-check (TypeScript + Svelte diagnostics)
-pnpm lint             # ESLint
-pnpm test             # Run unit tests (vitest, single run)
-pnpm test:unit        # Run vitest in watch mode
-pnpm deploy           # Build + deploy to Cloudflare Workers
+pnpm run dev              # Start dev server
+pnpm run build            # Production build
+pnpm run preview          # Build + run with Wrangler locally
+pnpm run check            # svelte-check (TypeScript + Svelte diagnostics)
+pnpm run lint             # ESLint
+pnpm run test             # Run unit tests (vitest, single run)
+pnpm run test:unit        # Run vitest in watch mode
+pnpm run deploy           # Build + deploy to Cloudflare Workers
 ```
 
 ---
@@ -41,9 +41,9 @@ Single Svelte 5 `$state` rune object wrapped in a factory function. Exported as 
 
 The store exposes typed setters instead of direct mutation. **Never mutate store properties directly from components.**
 
-### Preview Node Reference — `GeneratorSection.svelte`
+### Preview Node Reference — `Generator.svelte`
 
-`previewNode` is owned by `GeneratorSection`. It is threaded down via:
+`previewNode` is owned by `Generator`. It is threaded down via:
 - A callback prop `bindPreviewNode` into `PreviewPanel`
 - A getter function `getPreviewNode` passed to `ControlSidebar` → `ExportButtons`
 
@@ -53,9 +53,9 @@ This avoids Svelte context and keeps the DOM ref scoped to the section.
 
 ```
 src/lib/components/
-├── layout/          # Navbar — sticky header with nav links + theme toggle
+├── layout/          # Navbar — sticky header with nav links + theme toggle and Footer
 ├── sections/        # Full-page sections (GeneratorSection, FeaturesSection, UsageSection, FaqSection)
-├── generator/       # ControlSidebar + PreviewPanel — layout orchestration for the generator UI
+├── generator/       # Generator(combine ControlSidebar and PreviewPanel) — layout orchestration for the generator UI
 ├── atoms/           # Store-connected interactive controls (AvatarInput, Engagement, CommentTextarea,
 │                    #   CardThemeToggle, PlatformSelector, ExportButtons)
 ├── platforms/       # Platform-specific pure preview renderers (props-only, no store reads)
@@ -78,7 +78,7 @@ src/lib/components/
 #### Component Hierarchy
 
 ```
-GeneratorSection                      ← orchestrator; owns previewNode refs (mobile + desktop)
+Generator                             ← orchestrator; owns previewNode refs (mobile + desktop)
 ├── ControlSidebar                    ← layout: desktop = single column, mobile = tabbed (Avatar/Comment/Theme)
 │   ├── PlatformSelector              ← sets commentStore.platform + .subType
 │   ├── AvatarInput                   ← avatar fetch (randomuser.me) or file upload; sets username + isVerified
