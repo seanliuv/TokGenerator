@@ -5,7 +5,7 @@
 </script>
 
 <footer class="border-t border-border bg-secondary/20 px-6 py-12">
-  <div class="mx-auto max-w-5xl">
+  <div class="mx-auto max-w-7xl">
     <!-- Top row: branding + social links -->
     <div class="mb-8 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
       <!-- Logo + tagline -->
