@@ -42,7 +42,7 @@
     <!-- CTA nudge -->
     <div class="mt-10 text-center">
       <a
-        href="#generator"
+        href="#hero"
         class="inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white no-underline transition-opacity hover:opacity-90"
         style="background: var(--gen-accent);"
       >

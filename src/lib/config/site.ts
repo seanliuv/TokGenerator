@@ -10,15 +10,17 @@ import {
   PenLine,
   SlidersHorizontal,
   ImageDown,
+  Sun,
+  Heart,
 } from '@lucide/svelte';
 
 // ── Identity ─────────────────────────────────────────────────────────────────
 
 export const SITE_NAME = 'TokGenerator';
-export const SITE_TITLE = `TikTok Comment Generator | ${SITE_NAME}`;
+export const SITE_TITLE = `TikTok Comment Generator | Create Realistic Fake TikTok Comments`;
 export const SITE_DESCRIPTION =
-  'TokGenerator is a free online tool for creating fake TikTok comment screenshots. Create video comment and bubble reply images — complete with avatars, verified badges, likes, and timestamps. No sign-up required.';
-export const SITE_TAGLINE = 'We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with TikTok, ByteDance Ltd.';
+  'Create high-quality TikTok comment mockups with our free TikTok Comment Generator. Generate realistic fake TikTok comments for ads, prototypes, and social proof in seconds. No account required.';
+export const SITE_TAGLINE = 'We are not affiliated with TikTok, ByteDance Ltd.';
 
 // ── Social links ──────────────────────────────────────────────────────────────
 
@@ -31,12 +33,12 @@ export const socialLinks = {
 // ── Hero section ──────────────────────────────────────────────────────────────
 
 export const hero = {
-  h1: 'TikTok Comment Generator',
-  subTitle: 'Create pixel-perfect TikTok comment images — video comments, bubble replies, light & dark themes. Free forever, no watermarks, no login required.',
+  h1: 'Realistic TikTok Comment Generator',
+  subTitle: 'The most accurate tool to create fake TikTok comments for your marketing ads, UI prototypes, and creative projects. 100% free, private and secure, and no login required.',
   stats: [
-    { label: '100% Free Forever' },
+    { label: 'Pixel Level Accuracy' },
     { label: 'No Login Required' },
-    { label: 'Instant PNG Export' },
+    { label: 'Instant Export' },
   ],
 };
 
@@ -61,12 +63,7 @@ export const features: Feature[] = [
     description:
       'Speech bubble comment reply format, perfect for creating realistic conversation screenshots.',
   },
-  {
-    icon: Palette,
-    title: 'Light & Dark Themes',
-    description:
-      "Match TikTok's light or dark interface independently from your system theme. Switch with one click.",
-  },
+
   {
     icon: UserRound,
     title: 'Custom Avatars',
@@ -74,17 +71,23 @@ export const features: Feature[] = [
       'Upload your own photo or generate a realistic random avatar instantly. Male and female options available.',
   },
   {
-    icon: Download,
-    title: '2× Retina PNG Export',
-    description:
-      'Download crisp, high-resolution PNG images at 2× pixel density. Or copy directly to clipboard.',
-  },
-  {
     icon: BadgeCheck,
     title: 'Verified Badge Support',
     description:
       "Add TikTok's blue verification checkmark to any username. Every detail looks completely authentic.",
   },
+  {
+    icon: Heart,
+    title: 'Like & Reply Counts',
+    description:
+      'Customize the number of likes and replies for each comment to match real TikTok engagement.',
+  },
+  {
+    icon: Sun,
+    title: 'Light & Dark Themes',
+    description:
+      "Match TikTok's light or dark interface independently from your system theme. Switch with one click.",
+  }
 ];
 
 // ── Usage steps ───────────────────────────────────────────────────────────────
@@ -123,7 +126,7 @@ export const usageSteps: Step[] = [
     icon: ImageDown,
     title: 'Export & Share',
     description:
-      'Download a 2× retina-quality PNG or copy directly to clipboard. No watermarks, no sign-up needed.',
+      'Download a retina-quality PNG or copy directly to clipboard. No watermarks.',
   },
 ];
 
@@ -138,12 +141,17 @@ export const faqs: Faq[] = [
   {
     question: 'What is TokGenerator?',
     answer:
-      'TokGenerator is a free online tool for generating realistic TikTok comment screenshots. You can create video comment images and bubble reply images that look exactly like they come from the real TikTok app — complete with avatars, verified badges, likes, and timestamps.',
+      'TokGenerator is a online tool for generating realistic TikTok comment screenshots. You can create images that look exactly like they come from the real TikTok app — complete with avatars, verified badges, likes, and timestamps.',
   },
   {
-    question: 'Is it completely free to use?',
+    question: 'Can I use this for TikTok Ads?',
     answer:
-      'Yes, 100% free. No hidden costs, no premium tiers, no watermarks, and no account required. Just open the tool and start creating.',
+      'Yes! Many marketers use TokGenerator to create realistic TikTok comment mockups for their ad creatives. It’s a great way to showcase social proof and engagement in your TikTok ad designs.',
+  },
+  {
+    question: 'Does this tool post to real TikTok accounts?',
+    answer:
+      'No. This is a design tool that generates fake TikTok comment images for mockup purposes. It does not interact with the TikTok platform.',
   },
   {
     question: 'What TikTok comment styles are available?',
