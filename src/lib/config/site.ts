@@ -17,10 +17,13 @@ import {
 // ── Identity ─────────────────────────────────────────────────────────────────
 
 export const SITE_NAME = 'TokGenerator';
-export const SITE_TITLE = `TikTok Comment Generator | Create Realistic Fake TikTok Comments`;
+export const SITE_ROOTURL = 'https://tokgenerator.com/';
+export const SITE_TITLE = `TikTok Comment Generator | TokGenerator`;
 export const SITE_DESCRIPTION =
-  'Create high-quality TikTok comment mockups with our free TikTok Comment Generator. Generate realistic fake TikTok comments for ads, prototypes, and social proof in seconds. No account required.';
+  'Create TikTok comment mockups with our free TikTok Comment Generator. Get realistic fake TikTok comments for ads and social proof in seconds. No signup required.';
 export const SITE_TAGLINE = 'We are not affiliated with TikTok, ByteDance Ltd.';
+
+export const SITE_EMAIL = 'support@tokgenerator.com';
 
 // ── Social links ──────────────────────────────────────────────────────────────
 
@@ -63,7 +66,6 @@ export const features: Feature[] = [
     description:
       'Speech bubble comment reply format, perfect for creating realistic conversation screenshots.',
   },
-
   {
     icon: UserRound,
     title: 'Custom Avatars',

@@ -1,19 +1,25 @@
+<script>
+  import { SITE_NAME, SITE_ROOTURL, SITE_EMAIL } from '$lib/config/site';
+  let termsUrl = SITE_ROOTURL + 'terms';
+</script>
+
 <svelte:head>
-  <title>Terms of Service — TokGenerator</title>
-  <meta name="description" content="TokGenerator terms of service. Understand the rules for using TokGenerator, the leading TikTok comment mockup tool. Covers acceptable use, SaaS subscriptions, and trademark disclaimers." />
+  <title>Terms of Service — {SITE_NAME}</title>
+  <meta name="description" content="{SITE_NAME} terms of service. Understand the rules for using {SITE_NAME}, the leading TikTok comment mockup tool. Covers acceptable use, SaaS subscriptions, and trademark disclaimers." />
+  <link rel="canonical" href={termsUrl} />
 </svelte:head>
 
 # Terms of Service
 
 **Effective date: March 31, 2026**
 
-Please read these Terms of Service ("Terms") carefully before using TokGenerator (the "Service"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.
+Please read these Terms of Service ("Terms") carefully before using {SITE_NAME} (the "Service"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.
 
 ---
 
 ## 1. Description of the Service
 
-TokGenerator is a free tool that allows users to generate image mockups resembling TikTok comment screenshots. The Service is provided "as is" at no charge, with no account or registration required.
+{SITE_NAME} is a free tool that allows users to generate image mockups resembling TikTok comment screenshots. The Service is provided "as is" at no charge, with no account or registration required.
 
 The Service is supported by advertising. You agree that we may serve third-party advertisements (such as Google AdSense) on the Service.
 
@@ -21,7 +27,7 @@ The Service is supported by advertising. You agree that we may serve third-party
 
 ## 2. Acceptable Use
 
-You may use TokGenerator for:
+You may use {SITE_NAME} for:
 
 - **Educational purposes** — demonstrating how social media interfaces work, teaching design or media literacy
 - **Mockups and prototypes** — creating placeholder content for design presentations, UI demonstrations, or marketing materials
@@ -49,13 +55,13 @@ We reserve the right to block access to the Service for any use we determine, at
 
 ## 4. Intellectual Property
 
-### TokGenerator content
+### {SITE_NAME} content
 
-The TokGenerator name, logo, and website design are the property of their respective owners. The underlying source code is open-source — see our GitHub repository for license details.
+The {SITE_NAME} name, logo, and website design are the property of their respective owners. The underlying source code is open-source — see our GitHub repository for license details.
 
 ### TikTok trademark notice
 
-**Non-Affiliation: TokGenerator is a strictly independent design tool. We have no affiliation, association, or official connection with TikTok, ByteDance Ltd., or any of their subsidiaries. The term "Tok" is used for descriptive purposes only. The mockup interface is a creative reproduction intended for illustrative use and does not imply any endorsement by the trademark owner.**
+**Non-Affiliation: {SITE_NAME} is a strictly independent design tool. We have no affiliation, association, or official connection with TikTok, ByteDance Ltd., or any of their subsidiaries. The term "Tok" is used for descriptive purposes only. The mockup interface is a creative reproduction intended for illustrative use and does not imply any endorsement by the trademark owner.**
 
 ### Your generated images
 
@@ -87,7 +93,7 @@ We do not warrant that:
 
 ## 7. Limitation of Liability
 
-To the maximum extent permitted by applicable law, TokGenerator and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, the Service — even if we have been advised of the possibility of such damages.
+To the maximum extent permitted by applicable law, {SITE_NAME} and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, the Service — even if we have been advised of the possibility of such damages.
 
 Our total liability to you for any claim arising from these Terms or your use of the Service shall not exceed the amount you have paid us (which, for a free service, is zero).
 
@@ -95,7 +101,7 @@ Our total liability to you for any claim arising from these Terms or your use of
 
 ## 8. Indemnification
 
-You agree to indemnify and hold harmless TokGenerator and its operators from any claims, losses, damages, liabilities, costs, and expenses (including reasonable legal fees) arising from your use of the Service or your violation of these Terms.
+You agree to indemnify and hold harmless {SITE_NAME} and its operators from any claims, losses, damages, liabilities, costs, and expenses (including reasonable legal fees) arising from your use of the Service or your violation of these Terms.
 
 ---
 
@@ -121,4 +127,4 @@ These Terms shall be governed by and construed in accordance with law of United 
 
 If you have questions about these Terms, please reach out:
 
-- **Email**: [support@tokgenerator.com](mailto:support@tokgenerator.com)
+- **Email**: [{SITE_EMAIL}](mailto:{SITE_EMAIL})

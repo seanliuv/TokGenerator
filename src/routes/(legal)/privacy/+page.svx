@@ -1,15 +1,21 @@
+<script>
+  import { SITE_NAME, SITE_ROOTURL, SITE_EMAIL } from '$lib/config/site';
+  let privacyUrl = SITE_ROOTURL + 'privacy';
+</script>
+
 <svelte:head>
-  <title>Privacy Policy — TokGenerator</title>
-  <meta name="description" content="TokGenerator privacy policy. GDPR & CCPA compliant. Learn how we protect your data while using our TikTok comment tool." />
+  <title>Privacy Policy — {SITE_NAME}</title>
+  <meta name="description" content="{SITE_NAME} privacy policy. GDPR & CCPA compliant. Learn how we protect your data while using our TikTok comment tool." />
+  <link rel="canonical" href={privacyUrl} />
 </svelte:head>
 
 # Privacy Policy
 
 **Effective date: March 31, 2026**
 
-The TokGenerator Team ("we", "us", or "our") operates the TokGenerator website (the "Service"). This page explains our practices regarding any information that may be involved when you use the Service.
+The {SITE_NAME} Team ("we", "us", or "our") operates the {SITE_NAME} website (the "Service"). This page explains our practices regarding any information that may be involved when you use the Service.
 
-We have designed TokGenerator to be a privacy-respecting tool. **We do not require an account, we do not track you, and we do not store your content.**
+We have designed {SITE_NAME} to be a privacy-respecting tool. **We do not require an account, we do not track you, and we do not store your content.**
 
 ---
 
@@ -17,7 +23,7 @@ We have designed TokGenerator to be a privacy-respecting tool. **We do not requi
 
 ### Information you provide
 
-TokGenerator runs entirely in your browser. The username, comment text, and avatar you enter are used only to render a design mockup locally — this data is **never sent to our servers**.
+{SITE_NAME} runs entirely in your browser. The username, comment text, and avatar you enter are used only to render a design mockup locally — this data is **never sent to our servers**.
 
 ### Technical & Anti-Abuse Data
 
@@ -27,7 +33,7 @@ Like most websites, our infrastructure logs standard HTTP request data. Addition
 
 ## Cookies and Advertising
 
-TokGenerator uses minimal local storage for preferences. To support our free Service, we partner with Google AdSense and other third-party vendors. These vendors use cookies to serve ads based on your prior visits to our website or other websites on the internet.
+{SITE_NAME} uses minimal local storage for preferences. To support our free Service, we partner with Google AdSense and other third-party vendors. These vendors use cookies to serve ads based on your prior visits to our website or other websites on the internet.
 
 Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site. You may opt out of personalized advertising by visiting Google Ads Settings. You may also opt out of a third-party vendor's use of cookies for personalized advertising by visiting www.aboutads.info.
 
@@ -52,7 +58,7 @@ International Data Transfers: Our Service is hosted globally. By using the Servi
 
 ## Children's Privacy
 
-TokGenerator is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has submitted personal information through our Service, please contact us and we will promptly delete it.
+{SITE_NAME} is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has submitted personal information through our Service, please contact us and we will promptly delete it.
 
 ---
 
@@ -101,4 +107,4 @@ We may update this Privacy Policy from time to time. When we do, we will revise 
 
 If you have questions or concerns about this Privacy Policy, you can reach us through:
 
-- **Email**: [support@tokgenerator.com](mailto:support@tokgenerator.com)
+- **Email**: [{SITE_EMAIL}](mailto:{SITE_EMAIL})
