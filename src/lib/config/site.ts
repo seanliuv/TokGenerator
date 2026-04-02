@@ -25,6 +25,13 @@ export const SITE_TAGLINE = 'We are not affiliated with TikTok, ByteDance Ltd.';
 
 export const SITE_EMAIL = 'support@tokgenerator.com';
 
+// ── Open Graph ────────────────────────────────────────────────────────────────
+export const SITE_OG_IMAGE = `${SITE_ROOTURL}og-image.png`;
+// less than 60 characters to ensure the full title is displayed in search results and social media shares.
+export const SITE_OG_TITLE = 'Create Realistic TikTok Comment Mockups in Seconds!';
+// around 60 to 100 characters to ensure the full description is displayed in search results and social media shares.
+export const SITE_OG_DESCRIPTION = 'The best free tool to generate fake TikTok comments for ads, prototypes, and fun. No login required.';
+
 // ── Social links ──────────────────────────────────────────────────────────────
 
 export const socialLinks = {
