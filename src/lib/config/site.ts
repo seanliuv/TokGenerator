@@ -17,7 +17,7 @@ import {
 // ── Identity ─────────────────────────────────────────────────────────────────
 
 export const SITE_NAME = 'TokGenerator';
-export const SITE_ROOTURL = 'https://tokgenerator.com/';
+export const SITE_ROOTURL = 'https://tokgenerator.com';
 export const SITE_TITLE = `TikTok Comment Generator | TokGenerator`;
 export const SITE_DESCRIPTION =
   'Create TikTok comment mockups with our free TikTok Comment Generator. Get realistic fake TikTok comments for ads and social proof in seconds. No signup required.';
