@@ -20,6 +20,11 @@ declare global {
         // interface PageData {}
         // interface PageState {}
     }
+
+	interface Window {
+		dataLayer: unknown[];
+		gtag?: (...args: unknown[]) => void;
+	}
 }
 
 export {};
