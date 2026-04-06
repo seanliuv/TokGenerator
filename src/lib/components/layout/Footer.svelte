@@ -1,7 +1,6 @@
 <script lang="ts">
   import { SiX, SiGithub, SiDiscord } from '@icons-pack/svelte-simple-icons';
   import { SITE_NAME, SITE_TAGLINE, socialLinks } from '$lib/config/site';
-  import favicon from '$lib/assets/favicon.svg';
 </script>
 
 <footer class="border-t border-border bg-secondary/20 px-6 py-12">
@@ -11,7 +10,7 @@
       <!-- Logo + tagline -->
       <div class="flex flex-col gap-1.5">
         <a href="#hero" class="flex items-center gap-2 no-underline">
-          <img src={favicon} alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
+          <img src="/favicon.svg" alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
           <span class="text-sm font-bold tracking-tight text-foreground">{SITE_NAME}</span>
         </a>
         <p class="text-xs text-muted-foreground">{SITE_TAGLINE}</p>
