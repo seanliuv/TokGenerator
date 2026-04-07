@@ -20,7 +20,7 @@
   <div class="mx-auto flex h-14 w-full max-w-7xl items-center gap-6 px-4 md:px-6">
     <!-- Logo -->
     <a href="/" class="flex shrink-0 items-center gap-2 no-underline" onclick={() => (mobileMenuOpen = false)}>
-      <img src="/favicon.svg" alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
+      <img src="/favicon.ico" alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
       <span class="text-sm font-bold tracking-tight text-foreground">{SITE_NAME}</span>
     </a>
 
