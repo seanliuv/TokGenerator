@@ -1,5 +1,3 @@
-import { toPng, toBlob } from 'html-to-image';
-
 const EXPORT_OPTIONS = {
 	pixelRatio: 4,
 	quality: 1,
@@ -8,13 +6,14 @@ const EXPORT_OPTIONS = {
 	filter: (node: HTMLElement) => {
 		return !node.classList?.contains('export-exclude');
 	}
-} satisfies Parameters<typeof toPng>[1];
+};
 
 /**
  * Export the given DOM node as a PNG download.
  * Called twice: first to warm up font/image cache, second to capture.
  */
 export async function exportAsPng(node: HTMLElement, filename = 'comment.png'): Promise<void> {
+	const { toPng } = await import('html-to-image');
 	// First pass: warms up SVG foreignObject font rendering cache
 	await toPng(node, EXPORT_OPTIONS);
 	// Second pass: actual capture
@@ -30,6 +29,7 @@ export async function exportAsPng(node: HTMLElement, filename = 'comment.png'): 
  * Copy the given DOM node as a PNG to the clipboard.
  */
 export async function copyToClipboard(node: HTMLElement): Promise<void> {
+	const { toBlob } = await import('html-to-image');
 	// First pass: warm up cache
 	await toBlob(node, EXPORT_OPTIONS);
 	// Second pass: actual capture
