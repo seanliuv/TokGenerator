@@ -9,7 +9,7 @@
     <div class="mb-8 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
       <!-- Logo + tagline -->
       <div class="flex flex-col gap-1.5">
-        <a href="#hero" class="flex items-center gap-2 no-underline">
+        <a href="/#hero" class="flex items-center gap-2 no-underline">
           <img src="/favicon.svg" alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
           <span class="text-sm font-bold tracking-tight text-foreground">{SITE_NAME}</span>
         </a>

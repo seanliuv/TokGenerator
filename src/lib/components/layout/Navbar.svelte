@@ -4,10 +4,10 @@
   import { SITE_NAME } from '$lib/config/site';
 
   export const navLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'Features', href: '#features' },
-    { label: 'Usage', href: '#usage' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Home', href: '/#hero' },
+    { label: 'Features', href: '/#features' },
+    { label: 'Usage', href: '/#usage' },
+    { label: 'FAQ', href: '/#faq' },
   ];
 
   let mobileMenuOpen = $state(false);
