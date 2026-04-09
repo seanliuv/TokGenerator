@@ -18,15 +18,16 @@ import {
 
 export const SITE_NAME = 'TokGenerator';
 export const SITE_ROOTURL = 'https://tokgenerator.com';
+export const SITE_LOGOURL = `${SITE_ROOTURL}/web-app-manifest-192x192.png`;
 export const SITE_TITLE = `TikTok Comment Generator | TokGenerator`;
 export const SITE_DESCRIPTION =
   'Create TikTok comment mockups with our free TikTok Comment Generator. Get realistic fake TikTok comments for ads and social proof in seconds. No signup required.';
-export const SITE_TAGLINE = 'We are not affiliated with TikTok, ByteDance Ltd.';
 
 export const SITE_EMAIL = 'support@tokgenerator.com';
+export const SITE_TAGLINE = 'We are not affiliated with TikTok, ByteDance Ltd.';
 
 // ── Open Graph ────────────────────────────────────────────────────────────────
-export const SITE_OG_IMAGE = `${SITE_ROOTURL}og-image.png`;
+export const SITE_OG_IMAGE = `${SITE_ROOTURL}/og-image.png`;
 // less than 60 characters to ensure the full title is displayed in search results and social media shares.
 export const SITE_OG_TITLE = 'Create Realistic TikTok Comment Mockups in Seconds!';
 // around 60 to 100 characters to ensure the full description is displayed in search results and social media shares.
