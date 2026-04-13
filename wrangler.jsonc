@@ -44,7 +44,17 @@
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
 	 */
-	"vars": {  "PUBLIC_GOOGLE_ANALYTICS_ID": "G-ENWBG2EP99" }
+	"vars": {  "PUBLIC_GOOGLE_ANALYTICS_ID": "G-ENWBG2EP99" },
+	"ratelimits": [
+		{
+			"name": "AVATAR_RATE_LIMITER",
+			"namespace_id": "2001",
+			"simple": {
+				"limit": 10,
+				"period": 60
+			}
+		}
+	]
 	/**
 	 * Service Bindings (communicate between multiple Workers)
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
