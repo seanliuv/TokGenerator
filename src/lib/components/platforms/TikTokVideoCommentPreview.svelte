@@ -5,7 +5,7 @@
     username: string;
     avatarUrl: string;
     isVerified: boolean;
-    time: { value: number; unit: string };
+    time: { value: number; unit: string; mode?: string; customDate?: string };
     likes: number;
     replies: number;
     commentText: string;
@@ -22,9 +22,10 @@
   const textMuted2 = $derived(theme === 'dark' ? '#73747b' : '#8a8b91');
   const dividerColor = $derived(theme === 'dark' ? '#e8e8e8' : '#161823');
 
-  function formatTime(value: number, unit: string): string {
+  function formatTime(t: typeof time): string {
+    if (t.mode === 'custom' && t.customDate) return t.customDate;
     const map: Record<string, string> = { mins: 'm', hrs: 'h', days: 'd', wks: 'w' };
-    return `${value}${map[unit] ?? 'd'}`;
+    return `${t.value}${map[t.unit] ?? 'd'}`;
   }
 
   function formatLikes(n: number): string {
@@ -73,7 +74,7 @@
       <!-- Meta row: time + reply | heart count + thumbsdown -->
       <div class="mt-0.5 flex items-center justify-between">
         <div class="flex items-center gap-x-3.5">
-          <span class="text-[13px]" style="color: {textMuted2};">{formatTime(time.value, time.unit)}</span>
+          <span class="text-[13px]" style="color: {textMuted2};">{formatTime(time)}</span>
           <span class="text-[13px] font-semibold" style="color: {textMuted1};">Reply</span>
         </div>
         <div class="flex items-center gap-1.5">

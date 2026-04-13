@@ -5,6 +5,7 @@ import { SiTiktok, SiInstagram, SiYoutube, SiX } from '@icons-pack/svelte-simple
 export type Platform = 'tiktok' | 'instagram' | 'youtube' | 'twitter';
 export type SubType = 'bubble-reply-comment' | 'video-comment' | 'post-comment' | 'reels-comment' | 'shorts-comment';
 export type TimeUnit = 'mins' | 'hrs' | 'days' | 'wks';
+export type TimeMode = 'relative' | 'custom';
 export type CardTheme = 'light' | 'dark';
 
 export const platforms = [
@@ -54,7 +55,7 @@ export interface CommentState {
 	avatarUrl: string;
 	isVerified: boolean;
 	commentText: string;
-	time: { value: number; unit: TimeUnit };
+	time: { value: number; unit: TimeUnit; mode: TimeMode; customDate: string };
 	likes: number;
 	replies: number;
 	cardTheme: CardTheme;
@@ -68,7 +69,7 @@ function createCommentStore() {
 		avatarUrl: '',
 		isVerified: false,
 		commentText: 'Write your custom comment here 😊',
-		time: { value: 10, unit: 'hrs' },
+		time: { value: 10, unit: 'hrs', mode: 'relative', customDate: '3-21' },
 		likes: 72,
 		replies: 2,
 		cardTheme: 'light'
@@ -94,6 +95,8 @@ function createCommentStore() {
 		setCommentText(t: string) { state.commentText = t; },
 		setTimeValue(v: number) { state.time.value = v; },
 		setTimeUnit(u: TimeUnit) { state.time.unit = u; },
+		setTimeMode(m: TimeMode) { state.time.mode = m; },
+		setCustomDate(d: string) { state.time.customDate = d; },
 		setLikes(n: number) { state.likes = n; },
 		setReplies(n: number) { state.replies = n; },
 		setCardTheme(t: CardTheme) { state.cardTheme = t; },
