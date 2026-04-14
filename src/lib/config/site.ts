@@ -227,36 +227,37 @@ export const faqJsonLd = {
 
 export interface ComparisonRow {
   feature: string;
-  tokgenerator: string;
-  tokcomment: string;
-  postfully: string;
+  TokGenerator: string;
+  TokComment: string;
+  Postfully: string;
 }
 
-export const comparisonRows: ComparisonRow[] = [
-  { feature: 'Price', tokgenerator: 'Free', tokcomment: 'Paid', postfully: 'Free' },
+export const comparisons: ComparisonRow[] = [
+  { feature: 'Price', TokGenerator: 'Free', TokComment: 'Paid, limited daily free trial', Postfully: 'Free' },
   {
     feature: 'Font accuracy',
-    tokgenerator: 'TikTok Sans (native)',
-    tokcomment: 'Approximate',
-    postfully: 'Approximate',
+    TokGenerator: 'TikTok Sans (native)',
+    TokComment: 'Approximate',
+    Postfully: 'Approximate',
   },
   {
     feature: 'Date & timestamp format',
-    tokgenerator: 'Exact match',
-    tokcomment: 'Simplified',
-    postfully: 'Simplified',
+    TokGenerator: 'Exact match with real time formats.',
+    TokComment: 'Simplified',
+    Postfully: 'Simplified',
   },
   {
     feature: 'Layout & spacing',
-    tokgenerator: 'Pixel-perfect',
-    tokcomment: 'Basic',
-    postfully: 'Basic',
+    TokGenerator: 'Pixel-perfect',
+    TokComment: 'Pixel-perfect',
+    Postfully: 'Basic',
   },
-  { feature: 'Login required', tokgenerator: 'No', tokcomment: 'No', postfully: 'No' },
+  { feature: 'Login required', TokGenerator: 'No', TokComment: 'Yes', Postfully: 'No' },
   {
     feature: 'Data privacy',
-    tokgenerator: 'Runs locally',
-    tokcomment: 'Cloud-based',
-    postfully: 'Cloud-based',
+    TokGenerator: 'Runs locally',
+    TokComment: 'Cloud-based',
+    Postfully: 'Cloud-based',
   },
+  { feature: 'Export quality', TokGenerator: 'Retina-quality PNG', TokComment: 'Standard PNG', Postfully: 'Standard PNG' },
 ];
