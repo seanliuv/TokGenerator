@@ -164,7 +164,7 @@ export const faqs: Faq[] = [
   {
     question: 'What is TokGenerator?',
     answer:
-      'TokGenerator is a free online tool for generating TikTok comment screenshots that look exactly like they come from real TikTok. It\'s an free alternative to tools like TokComment.',
+      'TokGenerator is a free online tool for generating realistic TikTok comment screenshots. It\'s an free alternative to tools like TokComment, Postfully.',
   },
   {
     question: 'Can I use this for TikTok Ads?',
@@ -190,6 +190,21 @@ export const faqs: Faq[] = [
     question: 'What quality are the exported images?',
     answer:
       'Exported PNG images are rendered at 2× pixel density (retina quality), so they look sharp on any screen or when shared on social media. There are no watermarks or branding added to the output.',
+  },
+  {
+    question: 'Is TokGenerator completely free?',
+    answer:
+      'Yes, TokGenerator is 100% free with no account required. You can generate and export as many TikTok comment screenshots as you need — no watermarks, no usage limits, and no hidden fees.',
+  },
+  {
+    question: 'Is it legal to create fake TikTok comment screenshots?',
+    answer:
+      'Creating comment mockups for ad creatives, design prototypes, and educational content is widely accepted. TokGenerator is intended for legitimate creative and marketing purposes — not for impersonation or deception. Always disclose when images are mockups in commercial contexts.',
+  },
+  {
+    question: 'How do I make a fake TikTok comment look realistic?',
+    answer:
+      "Use a real-sounding username, pick a realistic profile photo (or use the random avatar generator), set a natural timestamp, and write a comment that matches typical TikTok tone. TokGenerator automatically applies TikTok's exact fonts, colors, and spacing — so the output is indistinguishable from a real screenshot.",
   },
   {
     question: 'Will more platforms be supported?',
