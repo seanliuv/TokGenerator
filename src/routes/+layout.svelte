@@ -5,57 +5,15 @@
   import {
     SITE_NAME,
     SITE_ROOTURL,
-    SITE_LOGOURL,
     SITE_TITLE,
     SITE_DESCRIPTION,
     SITE_OG_IMAGE,
     SITE_OG_TITLE,
     SITE_OG_DESCRIPTION,
+    websiteJsonLd,
+    faqJsonLd,
   } from '$lib/config/site';
   import GoogleAnalytics from '$lib/components/atoms/GoogleAnalytics.svelte';
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: SITE_NAME,
-    url: SITE_ROOTURL,
-    logo: SITE_LOGOURL,
-    operatingSystem: 'Web',
-    applicationCategory: 'MultimediaApplication',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      ratingCount: '1250',
-    },
-  };
-
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Is TokGenerator a free TikTok comment generator?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes, TokGenerator is a 100% free online tool to create realistic TikTok comment mockups for ads and prototypes.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Can I download fake TikTok comment screenshots as PNG?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Absolutely! You can export your generated TikTok comment screenshots as high-resolution PNG images instantly.',
-        },
-      },
-    ],
-  };
 
   let { children } = $props();
 </script>
@@ -89,7 +47,7 @@
   <link rel="manifest" href="/site.webmanifest" />
 
   <!-- JSON-LD Structured Data -->
-  {@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`}
+  {@html `<script type="application/ld+json">${JSON.stringify(websiteJsonLd)}</script>`}
   {@html `<script type="application/ld+json">${JSON.stringify(faqJsonLd)}</script>`}
 </svelte:head>
 

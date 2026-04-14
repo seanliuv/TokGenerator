@@ -2,9 +2,7 @@ import type { Component } from 'svelte';
 import {
   Film,
   MessageCircle,
-  Palette,
   UserRound,
-  Download,
   BadgeCheck,
   MousePointer2,
   PenLine,
@@ -17,21 +15,37 @@ import {
 // ── Identity ─────────────────────────────────────────────────────────────────
 
 export const SITE_NAME = 'TokGenerator';
-export const SITE_ROOTURL = 'https://tokgenerator.com';
-export const SITE_LOGOURL = `${SITE_ROOTURL}/web-app-manifest-192x192.png`;
-export const SITE_TITLE = `TikTok Comment Generator | TokGenerator`;
-export const SITE_DESCRIPTION =
-  'Create TikTok comment mockups with our free TikTok Comment Generator. Get realistic fake TikTok comments for ads and social proof in seconds. No signup required.';
-
+export const SITE_ROOTURL = 'https://tokgenerator.com/';
+export const SITE_LOGOURL = SITE_ROOTURL + 'web-app-manifest-192x192.png';
+export const SITE_TITLE = `Free TikTok Comment Mockups Generator | TokGenerator`;
+export const SITE_DESCRIPTION = 'Create realistic fake TikTok comment screenshots for ads and social proof in seconds. Free TikTok Comment Generator, no login required.';
 export const SITE_EMAIL = 'support@tokgenerator.com';
 export const SITE_TAGLINE = 'We are not affiliated with TikTok, ByteDance Ltd.';
 
+// ── JSON-LD ─────────────────────────────────────────────────────────────────
+
+export const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: SITE_NAME,
+  url: SITE_ROOTURL,
+  logo: SITE_LOGOURL,
+  operatingSystem: 'Web',
+  applicationCategory: 'MultimediaApplication',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+};
+
 // ── Open Graph ────────────────────────────────────────────────────────────────
-export const SITE_OG_IMAGE = `${SITE_ROOTURL}/og-image.png`;
+export const SITE_OG_IMAGE = SITE_ROOTURL + 'og-image.png';
 // less than 60 characters to ensure the full title is displayed in search results and social media shares.
 export const SITE_OG_TITLE = 'Create Realistic TikTok Comment Mockups in Seconds!';
 // around 60 to 100 characters to ensure the full description is displayed in search results and social media shares.
-export const SITE_OG_DESCRIPTION = 'The best free tool to generate fake TikTok comments for ads, prototypes, and fun. No login required.';
+export const SITE_OG_DESCRIPTION =
+  'The best free tool to generate fake TikTok comments for ads, prototypes, and fun. No login required.';
 
 // ── Social links ──────────────────────────────────────────────────────────────
 
@@ -45,7 +59,8 @@ export const socialLinks = {
 
 export const hero = {
   h1: 'Realistic TikTok Comment Generator',
-  subTitle: 'The most accurate tool to create fake TikTok comments for your marketing ads, UI prototypes, and creative projects. 100% free, private and secure, and no login required.',
+  subTitle:
+    'The most accurate tool to create fake TikTok comments for your marketing ads, UI prototypes, and creative projects. 100% free, private and secure, and no login required.',
   stats: [
     { label: 'Pixel Level Accuracy' },
     { label: 'No Login Required' },
@@ -97,7 +112,7 @@ export const features: Feature[] = [
     title: 'Light & Dark Themes',
     description:
       "Match TikTok's light or dark interface independently from your system theme. Switch with one click.",
-  }
+  },
 ];
 
 // ── Usage steps ───────────────────────────────────────────────────────────────
@@ -135,13 +150,11 @@ export const usageSteps: Step[] = [
     number: '04',
     icon: ImageDown,
     title: 'Export & Share',
-    description:
-      'Download a retina-quality PNG or copy directly to clipboard. No watermarks.',
+    description: 'Download a retina-quality PNG or copy directly to clipboard. No watermarks.',
   },
 ];
 
 // ── FAQs ──────────────────────────────────────────────────────────────────────
-
 interface Faq {
   question: string;
   answer: string;
@@ -151,12 +164,12 @@ export const faqs: Faq[] = [
   {
     question: 'What is TokGenerator?',
     answer:
-      'TokGenerator is a online tool for generating realistic TikTok comment screenshots. You can create images that look exactly like they come from the real TikTok app — complete with avatars, verified badges, likes, and timestamps.',
+      'TokGenerator is a free online tool for generating TikTok comment screenshots that look exactly like they come from real TikTok. It\'s an free alternative to tools like TokComment.',
   },
   {
     question: 'Can I use this for TikTok Ads?',
     answer:
-      'Yes! Many marketers use TokGenerator to create realistic TikTok comment mockups for their ad creatives. It’s a great way to showcase social proof and engagement in your TikTok ad designs.',
+      'Yes! Many marketers use TokGenerator to create realistic TikTok comment mockups for their ad creatives. It\'s a great way to showcase social proof and engagement in your TikTok ad designs.',
   },
   {
     question: 'Does this tool post to real TikTok accounts?',
@@ -182,5 +195,53 @@ export const faqs: Faq[] = [
     question: 'Will more platforms be supported?',
     answer:
       'Instagram, YouTube, and X (Twitter) comment styles are planned and coming soon. Stay tuned for updates.',
+  },
+];
+
+export const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+
+// ── Comparison table ──────────────────────────────────────────────────────────
+
+export interface ComparisonRow {
+  feature: string;
+  tokgenerator: string;
+  tokcomment: string;
+  postfully: string;
+}
+
+export const comparisonRows: ComparisonRow[] = [
+  { feature: 'Price', tokgenerator: 'Free', tokcomment: 'Paid', postfully: 'Free' },
+  {
+    feature: 'Font accuracy',
+    tokgenerator: 'TikTok Sans (native)',
+    tokcomment: 'Approximate',
+    postfully: 'Approximate',
+  },
+  {
+    feature: 'Date & timestamp format',
+    tokgenerator: 'Exact match',
+    tokcomment: 'Simplified',
+    postfully: 'Simplified',
+  },
+  {
+    feature: 'Layout & spacing',
+    tokgenerator: 'Pixel-perfect',
+    tokcomment: 'Basic',
+    postfully: 'Basic',
+  },
+  { feature: 'Login required', tokgenerator: 'No', tokcomment: 'No', postfully: 'No' },
+  {
+    feature: 'Data privacy',
+    tokgenerator: 'Runs locally',
+    tokcomment: 'Cloud-based',
+    postfully: 'Cloud-based',
   },
 ];
