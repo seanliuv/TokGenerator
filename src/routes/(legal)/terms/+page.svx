@@ -1,12 +1,10 @@
 <script>
-  import { SITE_NAME, SITE_ROOTURL, SITE_EMAIL } from '$lib/config/site';
-  let termsUrl = SITE_ROOTURL + 'terms';
+  import { SITE_NAME, SITE_EMAIL } from '$lib/config/site';
 </script>
 
 <svelte:head>
   <title>Terms of Service — {SITE_NAME}</title>
   <meta name="description" content="{SITE_NAME} terms of service. Understand the rules for using {SITE_NAME}, the leading TikTok comment mockup tool. Covers acceptable use, SaaS subscriptions, and trademark disclaimers." />
-  <link rel="canonical" href={termsUrl} />
 </svelte:head>
 
 # Terms of Service

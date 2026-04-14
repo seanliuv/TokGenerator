@@ -1,6 +1,7 @@
 <script lang="ts">
   import './layout.css';
   import { ModeWatcher } from 'mode-watcher';
+  import { page } from '$app/state';
   import { env } from '$env/dynamic/public';
   import {
     SITE_NAME,
@@ -16,14 +17,11 @@
   import GoogleAnalytics from '$lib/components/atoms/GoogleAnalytics.svelte';
 
   let { children } = $props();
+
+  let canonicalUrl = $derived(SITE_ROOTURL.replace(/\/$/, '') + page.url.pathname);
 </script>
 
 <svelte:head>
-  <!-- Essential Meta Tags -->
-  <title>{SITE_TITLE}</title>
-  <meta name="description" content={SITE_DESCRIPTION} />
-  <meta name="keywords" content="TikTok comment generator, fake TikTok comments, comment mockup, TikTok ads" />
-
   <!-- Open Graph (Social Media) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content={SITE_OG_TITLE} />
@@ -39,7 +37,7 @@
   <meta name="twitter:image" content={SITE_OG_IMAGE} />
 
   <!-- Canonical URL -->
-  <link rel="canonical" href={SITE_ROOTURL} />
+  <link rel="canonical" href={canonicalUrl} />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />

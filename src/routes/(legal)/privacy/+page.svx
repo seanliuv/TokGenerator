@@ -1,12 +1,10 @@
 <script>
-  import { SITE_NAME, SITE_ROOTURL, SITE_EMAIL } from '$lib/config/site';
-  let privacyUrl = SITE_ROOTURL + 'privacy';
+  import { SITE_NAME, SITE_EMAIL } from '$lib/config/site';
 </script>
 
 <svelte:head>
   <title>Privacy Policy — {SITE_NAME}</title>
   <meta name="description" content="{SITE_NAME} privacy policy. GDPR & CCPA compliant. Learn how we protect your data while using our TikTok comment tool." />
-  <link rel="canonical" href={privacyUrl} />
 </svelte:head>
 
 # Privacy Policy

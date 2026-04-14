@@ -18,6 +18,7 @@ export const SITE_NAME = 'TokGenerator';
 export const SITE_ROOTURL = 'https://tokgenerator.com/';
 export const SITE_LOGOURL = SITE_ROOTURL + 'web-app-manifest-192x192.png';
 export const SITE_TITLE = `Free TikTok Comment Generator | TokGenerator`;
+export const SITE_KEYWORD = 'TikTok comment generator, fake TikTok comments, comment mockup, TikTok ads';
 export const SITE_DESCRIPTION = 'Create realistic fake TikTok comment screenshots for ads and social proof in seconds. Free TikTok Comment Generator, no login required.';
 export const SITE_EMAIL = 'support@tokgenerator.com';
 export const SITE_TAGLINE = 'We are not affiliated with TikTok, ByteDance Ltd.';
