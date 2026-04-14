@@ -10,7 +10,7 @@
       <!-- Logo + tagline -->
       <div class="flex flex-col gap-1.5">
         <a href="/#hero" class="flex items-center gap-2 no-underline">
-          <img src="/favicon.ico" alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" draggable="false" />
+          <img src="/favicon-96x96.png" alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" loading="lazy" draggable="false" />
           <span class="text-sm font-bold tracking-tight text-foreground">{SITE_NAME}</span>
         </a>
         <p class="text-xs text-muted-foreground">{SITE_TAGLINE}</p>
