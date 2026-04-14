@@ -2,19 +2,7 @@
   import './layout.css';
   import { ModeWatcher } from 'mode-watcher';
   import { page } from '$app/state';
-  import { env } from '$env/dynamic/public';
-  import {
-    SITE_NAME,
-    SITE_ROOTURL,
-    SITE_TITLE,
-    SITE_DESCRIPTION,
-    SITE_OG_IMAGE,
-    SITE_OG_TITLE,
-    SITE_OG_DESCRIPTION,
-    websiteJsonLd,
-    faqJsonLd,
-  } from '$lib/config/site';
-  import GoogleAnalytics from '$lib/components/atoms/GoogleAnalytics.svelte';
+  import { SITE_ROOTURL, websiteJsonLd } from '$lib/config/site';
 
   let { children } = $props();
 
@@ -22,20 +10,6 @@
 </script>
 
 <svelte:head>
-  <!-- Open Graph (Social Media) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={SITE_OG_TITLE} />
-  <meta property="og:description" content={SITE_OG_DESCRIPTION} />
-  <meta property="og:image" content={SITE_OG_IMAGE} />
-  <meta property="og:url" content={SITE_ROOTURL} />
-  <meta property="og:site_name" content={SITE_NAME} />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={SITE_OG_TITLE} />
-  <meta name="twitter:description" content={SITE_OG_DESCRIPTION} />
-  <meta name="twitter:image" content={SITE_OG_IMAGE} />
-
   <!-- Canonical URL -->
   <link rel="canonical" href={canonicalUrl} />
 
@@ -46,11 +20,8 @@
 
   <!-- JSON-LD Structured Data -->
   {@html `<script type="application/ld+json">${JSON.stringify(websiteJsonLd)}</script>`}
-  {@html `<script type="application/ld+json">${JSON.stringify(faqJsonLd)}</script>`}
 </svelte:head>
 
 <ModeWatcher defaultMode="light" />
-
-<GoogleAnalytics id={env.PUBLIC_GOOGLE_ANALYTICS_ID} />
 
 {@render children()}
