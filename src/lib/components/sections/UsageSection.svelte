@@ -2,8 +2,8 @@
   import { usageSteps } from '$lib/config/site';
 </script>
 
-<section id="usage" class="border-b border-border bg-secondary/20 px-6 py-20 md:py-28">
-  <div class="mx-auto max-w-7xl">
+<section id="usage" class="px-2 py-5 md:px-10 md:py-20">
+  <div class="mx-auto max-w-6xl">
     <!-- Section header -->
     <div class="mb-12 text-center">
       <div

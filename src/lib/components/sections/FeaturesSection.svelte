@@ -3,8 +3,8 @@
   import { features } from '$lib/config/site';
 </script>
 
-<section id="features" class="border-b border-border px-6 py-20 md:py-28">
-  <div class="mx-auto max-w-7xl">
+<section id="features" class="px-2 py-5 md:px-10 md:py-20">
+  <div class="mx-auto max-w-6xl">
     <!-- Section header -->
     <div class="mb-12 text-center">
       <div

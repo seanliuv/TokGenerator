@@ -4,7 +4,7 @@
   import Generator from '$lib/components/generator/Generator.svelte';
 </script>
 
-<section id="hero" class="relative flex min-h-svh flex-col overflow-hidden border-b border-border md:px-6 md:py-16">
+<section id="hero" class="relative flex min-h-svh flex-col overflow-hidden px-2 py-5 md:px-10 md:py-20">
   <!-- Subtle TikTok dual-tone radial glow at top -->
   <div
     class="pointer-events-none absolute inset-0"
@@ -12,7 +12,7 @@
     aria-hidden="true"
   ></div>
 
-  <div class="relative mx-auto flex w-full max-w-7xl flex-1 flex-col items-center">
+  <div class="relative mx-auto flex w-full max-w-6xl flex-1 flex-col items-center">
     <!-- H1 -->
     <h1
       class="mb-5 bg-linear-to-r from-[#FF0050] via-[#FF8C00] to-[#00F2EA] bg-clip-text text-3xl font-bold leading-tight tracking-tight text-center text-transparent md:text-5xl lg:text-6xl"

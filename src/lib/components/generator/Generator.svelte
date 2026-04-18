@@ -13,13 +13,13 @@
 
 <Card.Root class="flex flex-1 w-full flex-col overflow-hidden border-border bg-card shadow-lg md:flex-row">
   <!-- On mobile: preview on top (dynamic height), controls below -->
-  <div class="flex h-[20dvh] min-h-37.5 shrink-0 items-center justify-center border-b border-border bg-secondary/10 md:hidden">
+  <div class="flex h-[25dvh] min-h-37.5 shrink-0 items-center justify-center border-b border-border bg-secondary/10 md:hidden">
     <!-- Mini preview panel for mobile -->
     <PreviewPanel bindPreviewNode={(n) => (mobilePreviewNode = n)} />
   </div>
 
   <!-- Sidebar (left on desktop, below preview on mobile) -->
-  <div class="flex h-[70dvh] flex-col overflow-hidden md:h-auto md:flex-none md:border-r md:border-border">
+  <div class="flex h-[60dvh] flex-col overflow-hidden md:h-auto md:flex-none md:border-r md:border-border">
     <ControlSidebar {getPreviewNode} />
   </div>
 
