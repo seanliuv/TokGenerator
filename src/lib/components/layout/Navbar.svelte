@@ -17,7 +17,7 @@
   class="sticky top-0 z-50 border-b border-border"
   style="background: color-mix(in oklch, var(--background) 88%, transparent); backdrop-filter: blur(12px);"
 >
-  <div class="mx-auto flex h-14 w-full max-w-7xl items-center gap-6 px-4 md:px-6">
+  <div class="mx-auto flex h-14 w-full max-w-6xl items-center gap-6 px-4 md:px-6">
     <!-- Logo -->
     <a href="/" class="flex shrink-0 items-center gap-2 no-underline" onclick={() => (mobileMenuOpen = false)}>
       <img src="/favicon-96x96.png" alt={`${SITE_NAME} logo`} class="h-7 w-7 select-none" loading="eager" draggable="false" />
