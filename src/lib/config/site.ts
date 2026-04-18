@@ -131,21 +131,21 @@ export const usageSteps: Step[] = [
     icon: MousePointer2,
     title: 'Choose Comment Style',
     description:
-      'Select between Video Comment (with engagement row) or Bubble Reply style. Both match TikTok exactly.',
+      'Select between Video Comment (with engagement row) or Bubble Reply style.',
   },
   {
     number: '02',
     icon: PenLine,
     title: 'Customize Your Content',
     description:
-      'Enter a username, write your comment text, and upload a photo or generate a random avatar with one click.',
+      'Enter a username, write your comment text, and upload a photo or use a random avatar with one click.',
   },
   {
     number: '03',
     icon: SlidersHorizontal,
     title: 'Adjust the Details',
     description:
-      'Toggle the verified badge, set likes, replies, and timestamp. Switch between light and dark card themes.',
+      'Toggle the verified badge, set likes, replies, and timestamp format. Switch between light and dark card themes as you wish.',
   },
   {
     number: '04',
