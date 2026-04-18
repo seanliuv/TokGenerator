@@ -1,15 +1,15 @@
 import type { Component } from 'svelte';
 import {
-  Film,
-  MessageCircle,
+  Layers,
+  Type,
+  Crosshair,
   UserRound,
-  BadgeCheck,
+  SunMoon,
+  ShieldCheck,
   MousePointer2,
   PenLine,
   SlidersHorizontal,
   ImageDown,
-  Sun,
-  Heart,
 } from '@lucide/svelte';
 
 // ── Identity ─────────────────────────────────────────────────────────────────
@@ -79,40 +79,40 @@ interface Feature {
 
 export const features: Feature[] = [
   {
-    icon: Film,
-    title: 'Video Comment Style',
+    icon: Layers,
+    title: 'Two Authentic Styles',
     description:
-      'Full TikTok video comment card with engagement row — likes, replies, and timestamps that look completely authentic.',
+      'Generate a full Video Comment card with engagement row, or a Bubble Reply for conversation threads. Both match TikTok\'s layout exactly.',
   },
   {
-    icon: MessageCircle,
-    title: 'Bubble Reply Style',
+    icon: Type,
+    title: 'Native TikTok Font',
     description:
-      'Speech bubble comment reply format, perfect for creating realistic conversation screenshots.',
+      'The only generator that uses TikTok\'s actual proprietary font. Every weight, size, and letter-spacing matches the real app — not an approximation.',
+  },
+  {
+    icon: Crosshair,
+    title: 'Pixel-Perfect Accuracy',
+    description:
+      'Verified badge, engagement counts, and timestamp formats are cloned pixel-by-pixel from TikTok\'s UI. Zoom in — you won\'t find the difference.',
   },
   {
     icon: UserRound,
-    title: 'Custom Avatars',
+    title: 'Real-Looking Avatars',
     description:
-      'Upload your own photo or generate a realistic random avatar instantly. Male and female options available.',
+      'Upload your own photo or generate a realistic random profile picture in one click — male or female. Every output looks like a real TikTok account.',
   },
   {
-    icon: BadgeCheck,
-    title: 'Verified Badge Support',
-    description:
-      "Add TikTok's blue verification checkmark to any username. Every detail looks completely authentic.",
-  },
-  {
-    icon: Heart,
-    title: 'Like & Reply Counts',
-    description:
-      'Customize the number of likes and replies for each comment to match real TikTok engagement.',
-  },
-  {
-    icon: Sun,
+    icon: SunMoon,
     title: 'Light & Dark Themes',
     description:
-      "Match TikTok's light or dark interface independently from your system theme. Switch with one click.",
+      'Switch the comment card between TikTok\'s light and dark interface with one click, independent of your system theme.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Private by Design',
+    description:
+      'Everything runs entirely in your browser. No images are uploaded to any server — your content is private and secure.',
   },
 ];
 
