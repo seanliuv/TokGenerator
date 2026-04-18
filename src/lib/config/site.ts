@@ -86,7 +86,7 @@ export const features: Feature[] = [
   },
   {
     icon: Type,
-    title: 'Native TikTok Font',
+    title: 'The Real TikTok Font',
     description:
       'The only generator that uses TikTok\'s actual proprietary font. Every weight, size, and letter-spacing matches the real app — not an approximation.',
   },
