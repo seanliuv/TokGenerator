@@ -1,6 +1,7 @@
 <script lang="ts">
   import ControlSidebar from '$lib/components/generator/ControlSidebar.svelte';
   import PreviewPanel from '$lib/components/generator/PreviewPanel.svelte';
+  import { ShineBorder } from '$lib/components/magic/shine-border';
   import * as Card from '$lib/components/ui/card/index.js';
 
   let mobilePreviewNode: HTMLElement | null = $state(null);
@@ -11,7 +12,8 @@
   }
 </script>
 
-<Card.Root class="flex flex-1 w-full flex-col overflow-hidden border-border bg-card shadow-lg md:flex-row">
+<Card.Root class="relative flex flex-1 w-full flex-col overflow-hidden border-border bg-card shadow-lg md:flex-row">
+  <ShineBorder shineColor={['#FF0050', '#00F2EA']} borderWidth={1.5} duration={12} />
   <!-- On mobile: preview on top (dynamic height), controls below -->
   <div class="flex h-[25dvh] min-h-37.5 shrink-0 items-center justify-center border-b border-border bg-secondary/10 md:hidden">
     <!-- Mini preview panel for mobile -->
