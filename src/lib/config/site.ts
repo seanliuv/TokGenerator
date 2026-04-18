@@ -165,7 +165,7 @@ export const faqs: Faq[] = [
   {
     question: 'What is TokGenerator?',
     answer:
-      'TokGenerator is a free online tool for generating realistic TikTok comment screenshots. It\'s an free alternative to tools like TokComment, Postfully.',
+      'TokGenerator is a free online tool for generating realistic TikTok comment screenshots. It\'s a free alternative to tools like TokComment, Postfully.',
   },
   {
     question: 'Can I use this for TikTok Ads?',

@@ -33,7 +33,7 @@
   }
 </script>
 
-<div class="w-105 select-none px-4 py-3" style="background: {cardBg}; font-family: 'TikTok Sans', sans-serif;">
+<div class="w-110 select-none px-4 py-3" style="background: {cardBg}; font-family: 'TikTok Sans', sans-serif;">
   <!-- Avatar + content row -->
   <div class="flex items-start gap-3">
     <!-- Avatar -->
