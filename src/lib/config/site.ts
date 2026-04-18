@@ -2,7 +2,7 @@ import type { Component } from 'svelte';
 import {
   Layers,
   Type,
-  Crosshair,
+  PenTool,
   UserRound,
   SunMoon,
   ShieldCheck,
@@ -10,6 +10,7 @@ import {
   PenLine,
   SlidersHorizontal,
   ImageDown,
+  KeyRound,
 } from '@lucide/svelte';
 
 // ── Identity ─────────────────────────────────────────────────────────────────
@@ -58,15 +59,21 @@ export const socialLinks = {
 
 // ── Hero section ──────────────────────────────────────────────────────────────
 
+interface Stat {
+  icon: Component;
+  label: string;
+}
+
 export const hero = {
   h1: 'Realistic TikTok Comment Generator',
   subTitle:
-    'The most accurate tool to create fake TikTok comments for your marketing ads, UI prototypes, and creative projects. 100% free, private and secure, and no login required.',
+    'The most accurate tool to create fake TikTok comments for your marketing ads, UI prototypes, and creative projects.',
   stats: [
-    { label: 'Pixel Level Accuracy' },
-    { label: 'No Login Required' },
-    { label: 'Instant Export' },
-  ],
+    { icon: PenTool, label: 'Pixel-Perfect Accuracy' },
+    { icon: KeyRound, label: 'Free · No Account Needed' },
+    { icon: ShieldCheck, label: '100% Private · Zero Upload' },
+    { icon: ImageDown, label: 'Instant Retina Quality Export' },
+  ] satisfies Stat[],
 };
 
 // ── Features ──────────────────────────────────────────────────────────────────
@@ -91,7 +98,7 @@ export const features: Feature[] = [
       'The only generator that uses TikTok\'s actual proprietary font. Every weight, size, and letter-spacing matches the real app — not an approximation.',
   },
   {
-    icon: Crosshair,
+    icon: PenTool,
     title: 'Pixel-Perfect Accuracy',
     description:
       'Verified badge, engagement counts, and timestamp formats are cloned pixel-by-pixel from TikTok\'s UI. Zoom in — you won\'t find the difference.',

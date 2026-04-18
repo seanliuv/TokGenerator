@@ -1,6 +1,5 @@
 <script lang="ts">
   import { hero } from '$lib/config/site';
-  import { PenTool, Shield, Zap } from '@lucide/svelte';
   import Generator from '$lib/components/generator/Generator.svelte';
 </script>
 
@@ -26,21 +25,16 @@
     </p>
 
     <!-- Stats row -->
-    <div class="mb-8 flex shrink-0 flex-wrap items-center justify-center text-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
-      <div class="flex items-center gap-1.5">
-        <PenTool size={14} color="var(--gen-accent)" />
-        <span>{hero.stats[0].label}</span>
-      </div>
-      <span class="hidden h-3.5 w-px bg-border sm:block"></span>
-      <div class="flex items-center gap-1.5">
-        <Shield size={14} color="var(--gen-accent)" />
-        <span>{hero.stats[1].label}</span>
-      </div>
-      <span class="hidden h-3.5 w-px bg-border sm:block"></span>
-      <div class="flex items-center gap-1.5">
-        <Zap size={14} color="var(--gen-accent)" />
-        <span>{hero.stats[2].label}</span>
-      </div>
+    <div class="mb-8 mx-auto flex w-fit flex-col items-start gap-y-3 text-sm text-muted-foreground sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6">
+      {#each hero.stats as stat, i}
+        <div class="flex items-center gap-1.5">
+          <svelte:component this={stat.icon} size={14} color="var(--gen-accent)" />
+          <span>{stat.label}</span>
+        </div>
+        {#if i < hero.stats.length - 1}
+          <span class="hidden h-3.5 w-px bg-border sm:block"></span>
+        {/if}
+      {/each}
     </div>
 
     <!-- Generator -->
