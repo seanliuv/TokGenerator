@@ -172,67 +172,70 @@ export const faqs: Faq[] = [
   {
     question: 'What is TokGenerator?',
     answer:
-      'TokGenerator is a free, browser-based tool for creating realistic TikTok comment screenshots — no account or software installation required. It supports two authentic comment styles (Video Comment and Bubble Reply), uses TikTok\'s actual proprietary font, and renders every detail at pixel-perfect accuracy. It\'s a privacy-first alternative to tools like TokComment and Postfully: everything runs locally in your browser, so your content never touches a server.',
+      'TokGenerator is a free browser-based tool for generating realistic fake TikTok comment screenshots — no account or installation required. It uses TikTok\'s actual font and pixel-perfect layout, so the output is indistinguishable from a real screenshot.',
   },
   {
     question: 'Is TokGenerator completely free?',
     answer:
-      'Yes, TokGenerator is 100% free with no account or credit card required. You can generate and export as many TikTok comment screenshots as you want — no watermarks, no usage limits, and no hidden fees.',
+      'Yes, 100% free with no account required — no watermarks, no usage limits, no hidden fees.',
   },
   {
     question: 'Is it legal to create fake TikTok comment screenshots?',
     answer:
-      'Creating TikTok comment mockups for ad creatives, UI prototypes, presentations, and educational content is widely accepted practice. TokGenerator is designed for legitimate creative and marketing purposes — not for impersonation, fraud, or deception. When using generated images in commercial contexts such as TikTok Ads, ensure your content complies with TikTok\'s advertising policies and disclose that images are mockups where required.',
+      'Creating TikTok comment mockups for ad creatives, prototypes, and educational content is widely accepted. When used in paid ads, ensure your content complies with TikTok\'s advertising policies.',
   },
   {
-    question: 'Does this tool interact with my TikTok account?',
+    question: 'Do I need a TikTok account to use this?',
     answer:
-      'No. TokGenerator is a standalone design tool with no connection to TikTok\'s platform or API. It never asks for your TikTok login credentials, never accesses your account, and never posts anything on your behalf. It simply renders a realistic comment image inside your browser.',
+      'No. TokGenerator is a standalone design tool — no TikTok account, login, or credentials of any kind required.',
   },
   {
     question: 'What TikTok comment styles are available?',
     answer:
-      'TokGenerator supports two TikTok comment styles. Video Comment is a full comment card — the style shown beneath TikTok videos — with avatar, username, verified badge, comment text, like count, reply count, and timestamp. Bubble Reply mimics the speech-bubble format used inside TikTok reply threads. Both styles support light and dark themes independently of your device\'s system theme.',
+      'Two styles: Video Comment (full card with likes, replies, and timestamp, as seen below TikTok videos) and Bubble Reply (speech-bubble format for reply threads). Both support light and dark themes.',
   },
   {
     question: 'Can I customize the like count, replies, and timestamp?',
     answer:
-      'Yes. In Video Comment style, you can set a custom like count, reply count, and choose from multiple timestamp formats (for example, "2h", "3d", or "Jan 15") to match how real TikTok comments appear. You can also toggle the verified badge on or off and switch between light and dark card themes at any time. The Bubble Reply style shares the same avatar and theme controls.',
+      'Yes. In Video Comment style you can set like count, reply count, timestamp format (relative like "2h" or a custom date like "2025-3-21" and other formats), and toggle the verified badge on or off.',
+  },
+  {
+    question: 'Is there a character limit on comment text?',
+    answer: 'Yes, 150 characters — matching TikTok\'s own comment length limit.',
   },
   {
     question: 'Can I use my own avatar photo?',
     answer:
-      'Yes. You can upload any image from your device as the profile avatar — JPG, PNG, and most common formats are supported. Alternatively, click the random avatar button to instantly generate a realistic profile photo (male or female) sourced from a real-face dataset, so the output looks like a genuine TikTok account.',
-  },
-  {
-    question: 'How do I make a fake TikTok comment look realistic?',
-    answer:
-      'Use a real-sounding TikTok-style handle (a mix of letters, numbers, or underscores), pick a realistic profile photo or use the one-click random avatar generator, choose a natural timestamp, and write a comment in the casual tone typical of TikTok. For engagement counts, avoid suspiciously round numbers — something like 1.2K looks more authentic than exactly 1,000. TokGenerator automatically applies TikTok\'s exact proprietary font, color palette, and pixel-level spacing, so the visual result is indistinguishable from a real screenshot.',
+      'Yes. Upload any photo from your device, or click the random avatar button to instantly generate a realistic-looking profile photo (male or female) in one click.',
   },
   {
     question: 'Can I use TokGenerator for TikTok Ads?',
     answer:
-      'Yes. Marketers and content creators widely use TokGenerator to produce TikTok comment mockups for UGC-style ad creatives, pitch decks, and social proof visuals. Displaying comment mockups in ad concepts can help communicate engagement and build credibility in your designs. Ensure your final ad creative complies with TikTok\'s advertising policies and accurately represents your content.',
+      'Yes. Marketers use it to create TikTok comment mockups for UGC-style ad creatives and social proof visuals. Ensure your ad content complies with TikTok\'s advertising policies.',
+  },
+  {
+    question: 'Is it safe to use fake TikTok comments in my ads?',
+    answer:
+      'Yes. Using a mockup image as an ad asset does not violate TikTok\'s platform rules. Ad account risk depends on your ad content and targeting — not the tool used to create the visual.',
   },
   {
     question: 'What quality are the exported images?',
     answer:
-      'All exported PNG images are rendered at 2× pixel density (Retina quality), so they look sharp and crisp on high-resolution displays, in presentations, and when shared on social media. The output contains no watermarks or TokGenerator branding. Both PNG download and copy-to-clipboard export are supported.',
+      'Exported as PNG at approximately 1760 × 816 px — sharp and ready for ads, presentations, and social media. No watermarks. Both download and copy-to-clipboard are supported.',
   },
   {
     question: 'Does TokGenerator work on mobile?',
     answer:
-      'Yes. TokGenerator runs entirely in your browser, so it works on any device — desktop, tablet, iPhone, or Android — with no app to install. The layout is responsive and adapts to smaller screens. For the most comfortable editing experience a desktop or tablet is recommended, but you can generate and export comment images directly from your phone.',
+      'Yes. It runs in any browser — desktop, tablet, iPhone, or Android — with no app to install.',
   },
   {
     question: 'What happens to photos I upload? Is my data private?',
     answer:
-      'Your uploaded photos never leave your device. TokGenerator processes everything locally inside your browser — no images, usernames, or comment text are sent to any server. There is no account system, no tracking of your generated content, and nothing is stored after you close the tab.',
+      'Your uploaded photos never leave your device. Everything runs locally in your browser — nothing is sent to any server.',
   },
   {
     question: 'Will more platforms be supported?',
-    answer:
-      'Yes. Instagram, YouTube, and X (Twitter) comment styles are in development and planned for a future release. If there is a specific platform or comment format you would like to see, feel free to reach out — community feedback shapes the roadmap.',
+    answer: 'Yes. Instagram, YouTube, and X (Twitter) comment styles are planned for a future release.',
   },
 ];
 
