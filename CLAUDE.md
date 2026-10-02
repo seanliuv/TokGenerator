@@ -24,6 +24,12 @@ pnpm run lint             # ESLint
 pnpm run test             # Run unit tests (vitest, single run)
 pnpm run test:unit        # Run vitest in watch mode
 pnpm run deploy           # Build + deploy to Cloudflare Workers
+
+# Browser extension (WXT + Svelte, lives in /extension — do not run wxt from repo root)
+pnpm run ext:dev          # WXT dev (loads unpacked Chrome extension)
+pnpm run ext:build        # Production MV3 build → extension/.output/chrome-mv3
+pnpm run ext:zip          # Zip for Chrome Web Store
+pnpm run ext:check        # svelte-check for the extension package
 ```
 
 ---

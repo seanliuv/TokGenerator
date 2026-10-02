@@ -15,7 +15,11 @@
 		"test": "npm run test:unit -- --run",
 		"gen": "wrangler types",
 		"deploy": "pnpm run build && wrangler deploy",
-		"cf-typegen": "wrangler types ./src/worker-configuration.d.ts"
+		"cf-typegen": "wrangler types ./src/worker-configuration.d.ts",
+		"ext:dev": "pnpm --dir extension dev",
+		"ext:build": "pnpm --dir extension build",
+		"ext:zip": "pnpm --dir extension zip",
+		"ext:check": "pnpm --dir extension check"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",
