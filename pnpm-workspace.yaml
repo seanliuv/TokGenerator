@@ -2,5 +2,7 @@ packages:
   - '.'
   - 'extension'
 
-onlyBuiltDependencies:
-  - esbuild
+allowBuilds:
+  esbuild: true
+  spawn-sync: false
+  workerd: false
